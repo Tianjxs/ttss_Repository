@@ -26,7 +26,7 @@ public class TestController {
         Map<String,Object> resultMap =new HashMap<>() ;
         DPlTmOrderH dPlTmOrderH = dPlTmOrderHMapper.queryByPk(1520821812202854998L);
         resultMap.put("data",dPlTmOrderH);
-
+        System.out.println("嘻嘻嘻");
         return JSON.toJSONString(resultMap) ;
     }
 }
