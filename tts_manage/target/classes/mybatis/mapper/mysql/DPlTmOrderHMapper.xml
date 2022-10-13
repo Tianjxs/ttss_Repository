@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tts.domain.mysql.DPlTmOrderHMapper">
+    
+    <resultMap type="org.tts.domain.mysql.entity.DPlTmOrderH" id="DPlTmOrderHMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="tid" column="tid" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="olshopid" column="olshopid" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="sellerNick" column="seller_nick" jdbcType="VARCHAR"/>
+        <result property="buyerNick" column="buyer_nick" jdbcType="VARCHAR"/>
+        <result property="created" column="created" jdbcType="TIMESTAMP"/>
+        <result property="oaid" column="oaid" jdbcType="VARCHAR"/>
+        <result property="modified" column="modified" jdbcType="TIMESTAMP"/>
+        <result property="adjustFee" column="adjust_fee" jdbcType="VARCHAR"/>
+        <result property="alipayNo" column="alipay_no" jdbcType="VARCHAR"/>
+        <result property="buyerRate" column="buyer_rate" jdbcType="VARCHAR"/>
+        <result property="creditCardFee" column="credit_card_fee" jdbcType="VARCHAR"/>
+        <result property="consignTime" column="consign_time" jdbcType="TIMESTAMP"/>
+        <result property="discountFee" column="discount_fee" jdbcType="VARCHAR"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="hasYfx" column="has_yfx" jdbcType="VARCHAR"/>
+        <result property="payment" column="payment" jdbcType="VARCHAR"/>
+        <result property="postFee" column="post_fee" jdbcType="VARCHAR"/>
+        <result property="receivedPayment" column="received_payment" jdbcType="VARCHAR"/>
+        <result property="receiverAddress" column="receiver_address" jdbcType="VARCHAR"/>
+        <result property="receiverCountry" column="receiver_country" jdbcType="VARCHAR"/>
+        <result property="receiverState" column="receiver_state" jdbcType="VARCHAR"/>
+        <result property="receiverCity" column="receiver_city" jdbcType="VARCHAR"/>
+        <result property="receiverDistrict" column="receiver_district" jdbcType="VARCHAR"/>
+        <result property="receiverTown" column="receiver_town" jdbcType="VARCHAR"/>
+        <result property="receiverMobile" column="receiver_mobile" jdbcType="VARCHAR"/>
+        <result property="receiverName" column="receiver_name" jdbcType="VARCHAR"/>
+        <result property="receiverPhone" column="receiver_phone" jdbcType="VARCHAR"/>
+        <result property="receiverZip" column="receiver_zip" jdbcType="VARCHAR"/>
+        <result property="sellerRate" column="seller_rate" jdbcType="VARCHAR"/>
+        <result property="shippingType" column="shipping_type" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="totalFee" column="total_fee" jdbcType="VARCHAR"/>
+        <result property="tradeFrom" column="trade_from" jdbcType="VARCHAR"/>
+        <result property="sellerFlag" column="seller_flag" jdbcType="INTEGER"/>
+        <result property="alipayPoint" column="alipay_point" jdbcType="INTEGER"/>
+        <result property="availableConfirmFee" column="available_confirm_fee" jdbcType="NUMERIC"/>
+        <result property="buyerAlipayNo" column="buyer_alipay_no" jdbcType="VARCHAR"/>
+        <result property="buyerArea" column="buyer_area" jdbcType="VARCHAR"/>
+        <result property="buyerCodFee" column="buyer_cod_fee" jdbcType="NUMERIC"/>
+        <result property="buyerEmail" column="buyer_email" jdbcType="VARCHAR"/>
+        <result property="buyerMessage" column="buyer_message" jdbcType="VARCHAR"/>
+        <result property="buyerObtainPointFee" column="buyer_obtain_point_fee" jdbcType="INTEGER"/>
+        <result property="codFee" column="cod_fee" jdbcType="VARCHAR"/>
+        <result property="codStatus" column="cod_status" jdbcType="VARCHAR"/>
+        <result property="couponFee" column="coupon_fee" jdbcType="NUMERIC"/>
+        <result property="commissionFee" column="commission_fee" jdbcType="NUMERIC"/>
+        <result property="hasPostFee" column="has_post_fee" jdbcType="VARCHAR"/>
+        <result property="is3d" column="is_3D" jdbcType="VARCHAR"/>
+        <result property="isBrandSale" column="is_brand_sale" jdbcType="VARCHAR"/>
+        <result property="isDaixiao" column="is_daixiao" jdbcType="VARCHAR"/>
+        <result property="isForceWlb" column="is_force_wlb" jdbcType="VARCHAR"/>
+        <result property="isShShip" column="is_sh_ship" jdbcType="VARCHAR"/>
+        <result property="isLgtype" column="is_lgtype" jdbcType="VARCHAR"/>
+        <result property="isPartConsign" column="is_part_consign" jdbcType="VARCHAR"/>
+        <result property="isWt" column="is_wt" jdbcType="VARCHAR"/>
+        <result property="pccAf" column="pcc_af" jdbcType="INTEGER"/>
+        <result property="pointFee" column="point_fee" jdbcType="NUMERIC"/>
+        <result property="realPointFee" column="real_point_fee" jdbcType="NUMERIC"/>
+        <result property="sellerAlipayNo" column="seller_alipay_no" jdbcType="VARCHAR"/>
+        <result property="sellerCanRate" column="seller_can_rate" jdbcType="VARCHAR"/>
+        <result property="sellerCodFee" column="seller_cod_fee" jdbcType="VARCHAR"/>
+        <result property="sellerEmail" column="seller_email" jdbcType="VARCHAR"/>
+        <result property="sellerMemo" column="seller_memo" jdbcType="VARCHAR"/>
+        <result property="sellerMobile" column="seller_mobile" jdbcType="VARCHAR"/>
+        <result property="sellerName" column="seller_name" jdbcType="VARCHAR"/>
+        <result property="sellerPhone" column="seller_phone" jdbcType="VARCHAR"/>
+        <result property="serviceTags" column="service_tags" jdbcType="OTHER"/>
+        <result property="sid" column="sid" jdbcType="VARCHAR"/>
+        <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
+        <result property="buyerMemo" column="buyer_memo" jdbcType="VARCHAR"/>
+        <result property="snapshotUrl" column="snapshot_url" jdbcType="VARCHAR"/>
+        <result property="tradeSource" column="trade_source" jdbcType="VARCHAR"/>
+        <result property="rxAuditStatus" column="rx_audit_status" jdbcType="VARCHAR"/>
+        <result property="isWmly" column="is_wmly" jdbcType="VARCHAR"/>
+        <result property="drugRegister" column="drug_register" jdbcType="VARCHAR"/>
+        <result property="omniPackage" column="omni_package" jdbcType="VARCHAR"/>
+        <result property="omniParam" column="omni_param" jdbcType="VARCHAR"/>
+        <result property="omnichannelParam" column="omnichannel_param" jdbcType="VARCHAR"/>
+        <result property="omniAttr" column="omni_attr" jdbcType="VARCHAR"/>
+        <result property="toptype" column="toptype" jdbcType="INTEGER"/>
+        <result property="mergeStatus" column="merge_status" jdbcType="INTEGER"/>
+        <result property="timeStamp" column="time_stamp" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="ext1" column="ext1" jdbcType="VARCHAR"/>
+        <result property="ext2" column="ext2" jdbcType="VARCHAR"/>
+        <result property="ext3" column="ext3" jdbcType="VARCHAR"/>
+        <result property="ext4" column="ext4" jdbcType="VARCHAR"/>
+        <result property="ext5" column="ext5" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <!--查询单个-->
+    <select id="queryById" resultMap="DPlTmOrderHMap">
+        SELECT id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_h
+         WHERE id = #{id}
+    </select>
+    
+    <!--通过主键查询-->
+    <select id="queryByPk" resultMap="DPlTmOrderHMap">
+        SELECT id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_h
+         WHERE     tid = #{tid}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DPlTmOrderHMap">
+        SELECT id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_h
+         LIMIT #{offset}, #{limit}
+    </select>
+    
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="DPlTmOrderHMap">
+        SELECT id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_h
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="tid != null">
+                AND tid = #{tid}
+            </if>
+            <if test="status != null and status != ''">
+                AND status = #{status}
+            </if>
+            <if test="olshopid != null and olshopid != ''">
+                AND olshopid = #{olshopid}
+            </if>
+            <if test="type != null and type != ''">
+                AND type = #{type}
+            </if>
+            <if test="sellerNick != null and sellerNick != ''">
+                AND seller_nick = #{sellerNick}
+            </if>
+            <if test="buyerNick != null and buyerNick != ''">
+                AND buyer_nick = #{buyerNick}
+            </if>
+            <if test="created != null">
+                AND created = #{created}
+            </if>
+            <if test="oaid != null and oaid != ''">
+                AND oaid = #{oaid}
+            </if>
+            <if test="modified != null">
+                AND modified = #{modified}
+            </if>
+            <if test="adjustFee != null and adjustFee != ''">
+                AND adjust_fee = #{adjustFee}
+            </if>
+            <if test="alipayNo != null and alipayNo != ''">
+                AND alipay_no = #{alipayNo}
+            </if>
+            <if test="buyerRate != null and buyerRate != ''">
+                AND buyer_rate = #{buyerRate}
+            </if>
+            <if test="creditCardFee != null and creditCardFee != ''">
+                AND credit_card_fee = #{creditCardFee}
+            </if>
+            <if test="consignTime != null">
+                AND consign_time = #{consignTime}
+            </if>
+            <if test="discountFee != null and discountFee != ''">
+                AND discount_fee = #{discountFee}
+            </if>
+            <if test="endTime != null">
+                AND end_time = #{endTime}
+            </if>
+            <if test="hasYfx != null and hasYfx != ''">
+                AND has_yfx = #{hasYfx}
+            </if>
+            <if test="payment != null and payment != ''">
+                AND payment = #{payment}
+            </if>
+            <if test="postFee != null and postFee != ''">
+                AND post_fee = #{postFee}
+            </if>
+            <if test="receivedPayment != null and receivedPayment != ''">
+                AND received_payment = #{receivedPayment}
+            </if>
+            <if test="receiverAddress != null and receiverAddress != ''">
+                AND receiver_address = #{receiverAddress}
+            </if>
+            <if test="receiverCountry != null and receiverCountry != ''">
+                AND receiver_country = #{receiverCountry}
+            </if>
+            <if test="receiverState != null and receiverState != ''">
+                AND receiver_state = #{receiverState}
+            </if>
+            <if test="receiverCity != null and receiverCity != ''">
+                AND receiver_city = #{receiverCity}
+            </if>
+            <if test="receiverDistrict != null and receiverDistrict != ''">
+                AND receiver_district = #{receiverDistrict}
+            </if>
+            <if test="receiverTown != null and receiverTown != ''">
+                AND receiver_town = #{receiverTown}
+            </if>
+            <if test="receiverMobile != null and receiverMobile != ''">
+                AND receiver_mobile = #{receiverMobile}
+            </if>
+            <if test="receiverName != null and receiverName != ''">
+                AND receiver_name = #{receiverName}
+            </if>
+            <if test="receiverPhone != null and receiverPhone != ''">
+                AND receiver_phone = #{receiverPhone}
+            </if>
+            <if test="receiverZip != null and receiverZip != ''">
+                AND receiver_zip = #{receiverZip}
+            </if>
+            <if test="sellerRate != null and sellerRate != ''">
+                AND seller_rate = #{sellerRate}
+            </if>
+            <if test="shippingType != null and shippingType != ''">
+                AND shipping_type = #{shippingType}
+            </if>
+            <if test="title != null and title != ''">
+                AND title = #{title}
+            </if>
+            <if test="totalFee != null and totalFee != ''">
+                AND total_fee = #{totalFee}
+            </if>
+            <if test="tradeFrom != null and tradeFrom != ''">
+                AND trade_from = #{tradeFrom}
+            </if>
+            <if test="sellerFlag != null">
+                AND seller_flag = #{sellerFlag}
+            </if>
+            <if test="alipayPoint != null">
+                AND alipay_point = #{alipayPoint}
+            </if>
+            <if test="availableConfirmFee != null">
+                AND available_confirm_fee = #{availableConfirmFee}
+            </if>
+            <if test="buyerAlipayNo != null and buyerAlipayNo != ''">
+                AND buyer_alipay_no = #{buyerAlipayNo}
+            </if>
+            <if test="buyerArea != null and buyerArea != ''">
+                AND buyer_area = #{buyerArea}
+            </if>
+            <if test="buyerCodFee != null">
+                AND buyer_cod_fee = #{buyerCodFee}
+            </if>
+            <if test="buyerEmail != null and buyerEmail != ''">
+                AND buyer_email = #{buyerEmail}
+            </if>
+            <if test="buyerMessage != null and buyerMessage != ''">
+                AND buyer_message = #{buyerMessage}
+            </if>
+            <if test="buyerObtainPointFee != null">
+                AND buyer_obtain_point_fee = #{buyerObtainPointFee}
+            </if>
+            <if test="codFee != null and codFee != ''">
+                AND cod_fee = #{codFee}
+            </if>
+            <if test="codStatus != null and codStatus != ''">
+                AND cod_status = #{codStatus}
+            </if>
+            <if test="couponFee != null">
+                AND coupon_fee = #{couponFee}
+            </if>
+            <if test="commissionFee != null">
+                AND commission_fee = #{commissionFee}
+            </if>
+            <if test="hasPostFee != null and hasPostFee != ''">
+                AND has_post_fee = #{hasPostFee}
+            </if>
+            <if test="is3d != null and is3d != ''">
+                AND is_3D = #{is3d}
+            </if>
+            <if test="isBrandSale != null and isBrandSale != ''">
+                AND is_brand_sale = #{isBrandSale}
+            </if>
+            <if test="isDaixiao != null and isDaixiao != ''">
+                AND is_daixiao = #{isDaixiao}
+            </if>
+            <if test="isForceWlb != null and isForceWlb != ''">
+                AND is_force_wlb = #{isForceWlb}
+            </if>
+            <if test="isShShip != null and isShShip != ''">
+                AND is_sh_ship = #{isShShip}
+            </if>
+            <if test="isLgtype != null and isLgtype != ''">
+                AND is_lgtype = #{isLgtype}
+            </if>
+            <if test="isPartConsign != null and isPartConsign != ''">
+                AND is_part_consign = #{isPartConsign}
+            </if>
+            <if test="isWt != null and isWt != ''">
+                AND is_wt = #{isWt}
+            </if>
+            <if test="pccAf != null">
+                AND pcc_af = #{pccAf}
+            </if>
+            <if test="pointFee != null">
+                AND point_fee = #{pointFee}
+            </if>
+            <if test="realPointFee != null">
+                AND real_point_fee = #{realPointFee}
+            </if>
+            <if test="sellerAlipayNo != null and sellerAlipayNo != ''">
+                AND seller_alipay_no = #{sellerAlipayNo}
+            </if>
+            <if test="sellerCanRate != null and sellerCanRate != ''">
+                AND seller_can_rate = #{sellerCanRate}
+            </if>
+            <if test="sellerCodFee != null and sellerCodFee != ''">
+                AND seller_cod_fee = #{sellerCodFee}
+            </if>
+            <if test="sellerEmail != null and sellerEmail != ''">
+                AND seller_email = #{sellerEmail}
+            </if>
+            <if test="sellerMemo != null and sellerMemo != ''">
+                AND seller_memo = #{sellerMemo}
+            </if>
+            <if test="sellerMobile != null and sellerMobile != ''">
+                AND seller_mobile = #{sellerMobile}
+            </if>
+            <if test="sellerName != null and sellerName != ''">
+                AND seller_name = #{sellerName}
+            </if>
+            <if test="sellerPhone != null and sellerPhone != ''">
+                AND seller_phone = #{sellerPhone}
+            </if>
+            <if test="serviceTags != null">
+                AND service_tags = #{serviceTags}
+            </if>
+            <if test="sid != null and sid != ''">
+                AND sid = #{sid}
+            </if>
+            <if test="payTime != null">
+                AND pay_time = #{payTime}
+            </if>
+            <if test="buyerMemo != null and buyerMemo != ''">
+                AND buyer_memo = #{buyerMemo}
+            </if>
+            <if test="snapshotUrl != null and snapshotUrl != ''">
+                AND snapshot_url = #{snapshotUrl}
+            </if>
+            <if test="tradeSource != null and tradeSource != ''">
+                AND trade_source = #{tradeSource}
+            </if>
+            <if test="rxAuditStatus != null and rxAuditStatus != ''">
+                AND rx_audit_status = #{rxAuditStatus}
+            </if>
+            <if test="isWmly != null and isWmly != ''">
+                AND is_wmly = #{isWmly}
+            </if>
+            <if test="drugRegister != null and drugRegister != ''">
+                AND drug_register = #{drugRegister}
+            </if>
+            <if test="omniPackage != null and omniPackage != ''">
+                AND omni_package = #{omniPackage}
+            </if>
+            <if test="omniParam != null and omniParam != ''">
+                AND omni_param = #{omniParam}
+            </if>
+            <if test="omnichannelParam != null and omnichannelParam != ''">
+                AND omnichannel_param = #{omnichannelParam}
+            </if>
+            <if test="omniAttr != null and omniAttr != ''">
+                AND omni_attr = #{omniAttr}
+            </if>
+            <if test="toptype != null">
+                AND toptype = #{toptype}
+            </if>
+            <if test="mergeStatus != null">
+                AND merge_status = #{mergeStatus}
+            </if>
+            <if test="timeStamp != null">
+                AND time_stamp = #{timeStamp}
+            </if>
+            <if test="createTime != null">
+                AND create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                AND update_time = #{updateTime}
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                AND ext1 = #{ext1}
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                AND ext2 = #{ext2}
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                AND ext3 = #{ext3}
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                AND ext4 = #{ext4}
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                AND ext5 = #{ext5}
+            </if>
+        </where>
+    </select>
+    
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="tid" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_tm_order_h(id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES (#{id}, #{tid}, #{status}, #{olshopid}, #{type}, #{sellerNick}, #{buyerNick}, #{created}, #{oaid}, #{modified}, #{adjustFee}, #{alipayNo}, #{buyerRate}, #{creditCardFee}, #{consignTime}, #{discountFee}, #{endTime}, #{hasYfx}, #{payment}, #{postFee}, #{receivedPayment}, #{receiverAddress}, #{receiverCountry}, #{receiverState}, #{receiverCity}, #{receiverDistrict}, #{receiverTown}, #{receiverMobile}, #{receiverName}, #{receiverPhone}, #{receiverZip}, #{sellerRate}, #{shippingType}, #{title}, #{totalFee}, #{tradeFrom}, #{sellerFlag}, #{alipayPoint}, #{availableConfirmFee}, #{buyerAlipayNo}, #{buyerArea}, #{buyerCodFee}, #{buyerEmail}, #{buyerMessage}, #{buyerObtainPointFee}, #{codFee}, #{codStatus}, #{couponFee}, #{commissionFee}, #{hasPostFee}, #{is3d}, #{isBrandSale}, #{isDaixiao}, #{isForceWlb}, #{isShShip}, #{isLgtype}, #{isPartConsign}, #{isWt}, #{pccAf}, #{pointFee}, #{realPointFee}, #{sellerAlipayNo}, #{sellerCanRate}, #{sellerCodFee}, #{sellerEmail}, #{sellerMemo}, #{sellerMobile}, #{sellerName}, #{sellerPhone}, #{serviceTags}, #{sid}, #{payTime}, #{buyerMemo}, #{snapshotUrl}, #{tradeSource}, #{rxAuditStatus}, #{isWmly}, #{drugRegister}, #{omniPackage}, #{omniParam}, #{omnichannelParam}, #{omniAttr}, #{toptype}, #{mergeStatus}, #{timeStamp}, #{createTime}, #{updateTime}, #{ext1}, #{ext2}, #{ext3}, #{ext4}, #{ext5})
+    </insert>
+    
+    <insert id="insertBatch" keyProperty="tid" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_tm_order_h(id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.tid}, #{entity.status}, #{entity.olshopid}, #{entity.type}, #{entity.sellerNick}, #{entity.buyerNick}, #{entity.created}, #{entity.oaid}, #{entity.modified}, #{entity.adjustFee}, #{entity.alipayNo}, #{entity.buyerRate}, #{entity.creditCardFee}, #{entity.consignTime}, #{entity.discountFee}, #{entity.endTime}, #{entity.hasYfx}, #{entity.payment}, #{entity.postFee}, #{entity.receivedPayment}, #{entity.receiverAddress}, #{entity.receiverCountry}, #{entity.receiverState}, #{entity.receiverCity}, #{entity.receiverDistrict}, #{entity.receiverTown}, #{entity.receiverMobile}, #{entity.receiverName}, #{entity.receiverPhone}, #{entity.receiverZip}, #{entity.sellerRate}, #{entity.shippingType}, #{entity.title}, #{entity.totalFee}, #{entity.tradeFrom}, #{entity.sellerFlag}, #{entity.alipayPoint}, #{entity.availableConfirmFee}, #{entity.buyerAlipayNo}, #{entity.buyerArea}, #{entity.buyerCodFee}, #{entity.buyerEmail}, #{entity.buyerMessage}, #{entity.buyerObtainPointFee}, #{entity.codFee}, #{entity.codStatus}, #{entity.couponFee}, #{entity.commissionFee}, #{entity.hasPostFee}, #{entity.is3d}, #{entity.isBrandSale}, #{entity.isDaixiao}, #{entity.isForceWlb}, #{entity.isShShip}, #{entity.isLgtype}, #{entity.isPartConsign}, #{entity.isWt}, #{entity.pccAf}, #{entity.pointFee}, #{entity.realPointFee}, #{entity.sellerAlipayNo}, #{entity.sellerCanRate}, #{entity.sellerCodFee}, #{entity.sellerEmail}, #{entity.sellerMemo}, #{entity.sellerMobile}, #{entity.sellerName}, #{entity.sellerPhone}, #{entity.serviceTags}, #{entity.sid}, #{entity.payTime}, #{entity.buyerMemo}, #{entity.snapshotUrl}, #{entity.tradeSource}, #{entity.rxAuditStatus}, #{entity.isWmly}, #{entity.drugRegister}, #{entity.omniPackage}, #{entity.omniParam}, #{entity.omnichannelParam}, #{entity.omniAttr}, #{entity.toptype}, #{entity.mergeStatus}, #{entity.timeStamp}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3}, #{entity.ext4}, #{entity.ext5})
+        </foreach>
+    </insert>
+    
+    <insert id="insertOrUpdateBatch" keyProperty="tid" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_tm_order_h(id, tid, status, olshopid, type, seller_nick, buyer_nick, created, oaid, modified, adjust_fee, alipay_no, buyer_rate, credit_card_fee, consign_time, discount_fee, end_time, has_yfx, payment, post_fee, received_payment, receiver_address, receiver_country, receiver_state, receiver_city, receiver_district, receiver_town, receiver_mobile, receiver_name, receiver_phone, receiver_zip, seller_rate, shipping_type, title, total_fee, trade_from, seller_flag, alipay_point, available_confirm_fee, buyer_alipay_no, buyer_area, buyer_cod_fee, buyer_email, buyer_message, buyer_obtain_point_fee, cod_fee, cod_status, coupon_fee, commission_fee, has_post_fee, is_3D, is_brand_sale, is_daixiao, is_force_wlb, is_sh_ship, is_lgtype, is_part_consign, is_wt, pcc_af, point_fee, real_point_fee, seller_alipay_no, seller_can_rate, seller_cod_fee, seller_email, seller_memo, seller_mobile, seller_name, seller_phone, service_tags, sid, pay_time, buyer_memo, snapshot_url, trade_source, rx_audit_status, is_wmly, drug_register, omni_package, omni_param, omnichannel_param, omni_attr, toptype, merge_status, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.tid}, #{entity.status}, #{entity.olshopid}, #{entity.type}, #{entity.sellerNick}, #{entity.buyerNick}, #{entity.created}, #{entity.oaid}, #{entity.modified}, #{entity.adjustFee}, #{entity.alipayNo}, #{entity.buyerRate}, #{entity.creditCardFee}, #{entity.consignTime}, #{entity.discountFee}, #{entity.endTime}, #{entity.hasYfx}, #{entity.payment}, #{entity.postFee}, #{entity.receivedPayment}, #{entity.receiverAddress}, #{entity.receiverCountry}, #{entity.receiverState}, #{entity.receiverCity}, #{entity.receiverDistrict}, #{entity.receiverTown}, #{entity.receiverMobile}, #{entity.receiverName}, #{entity.receiverPhone}, #{entity.receiverZip}, #{entity.sellerRate}, #{entity.shippingType}, #{entity.title}, #{entity.totalFee}, #{entity.tradeFrom}, #{entity.sellerFlag}, #{entity.alipayPoint}, #{entity.availableConfirmFee}, #{entity.buyerAlipayNo}, #{entity.buyerArea}, #{entity.buyerCodFee}, #{entity.buyerEmail}, #{entity.buyerMessage}, #{entity.buyerObtainPointFee}, #{entity.codFee}, #{entity.codStatus}, #{entity.couponFee}, #{entity.commissionFee}, #{entity.hasPostFee}, #{entity.is3d}, #{entity.isBrandSale}, #{entity.isDaixiao}, #{entity.isForceWlb}, #{entity.isShShip}, #{entity.isLgtype}, #{entity.isPartConsign}, #{entity.isWt}, #{entity.pccAf}, #{entity.pointFee}, #{entity.realPointFee}, #{entity.sellerAlipayNo}, #{entity.sellerCanRate}, #{entity.sellerCodFee}, #{entity.sellerEmail}, #{entity.sellerMemo}, #{entity.sellerMobile}, #{entity.sellerName}, #{entity.sellerPhone}, #{entity.serviceTags}, #{entity.sid}, #{entity.payTime}, #{entity.buyerMemo}, #{entity.snapshotUrl}, #{entity.tradeSource}, #{entity.rxAuditStatus}, #{entity.isWmly}, #{entity.drugRegister}, #{entity.omniPackage}, #{entity.omniParam}, #{entity.omnichannelParam}, #{entity.omniAttr}, #{entity.toptype}, #{entity.mergeStatus}, #{entity.timeStamp}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3}, #{entity.ext4}, #{entity.ext5})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+            id = values(id) , tid = values(tid) , status = values(status) , olshopid = values(olshopid) , type = values(type) , seller_nick = values(seller_nick) , buyer_nick = values(buyer_nick) , created = values(created) , oaid = values(oaid) , modified = values(modified) , adjust_fee = values(adjust_fee) , alipay_no = values(alipay_no) , buyer_rate = values(buyer_rate) , credit_card_fee = values(credit_card_fee) , consign_time = values(consign_time) , discount_fee = values(discount_fee) , end_time = values(end_time) , has_yfx = values(has_yfx) , payment = values(payment) , post_fee = values(post_fee) , received_payment = values(received_payment) , receiver_address = values(receiver_address) , receiver_country = values(receiver_country) , receiver_state = values(receiver_state) , receiver_city = values(receiver_city) , receiver_district = values(receiver_district) , receiver_town = values(receiver_town) , receiver_mobile = values(receiver_mobile) , receiver_name = values(receiver_name) , receiver_phone = values(receiver_phone) , receiver_zip = values(receiver_zip) , seller_rate = values(seller_rate) , shipping_type = values(shipping_type) , title = values(title) , total_fee = values(total_fee) , trade_from = values(trade_from) , seller_flag = values(seller_flag) , alipay_point = values(alipay_point) , available_confirm_fee = values(available_confirm_fee) , buyer_alipay_no = values(buyer_alipay_no) , buyer_area = values(buyer_area) , buyer_cod_fee = values(buyer_cod_fee) , buyer_email = values(buyer_email) , buyer_message = values(buyer_message) , buyer_obtain_point_fee = values(buyer_obtain_point_fee) , cod_fee = values(cod_fee) , cod_status = values(cod_status) , coupon_fee = values(coupon_fee) , commission_fee = values(commission_fee) , has_post_fee = values(has_post_fee) , is_3D = values(is_3D) , is_brand_sale = values(is_brand_sale) , is_daixiao = values(is_daixiao) , is_force_wlb = values(is_force_wlb) , is_sh_ship = values(is_sh_ship) , is_lgtype = values(is_lgtype) , is_part_consign = values(is_part_consign) , is_wt = values(is_wt) , pcc_af = values(pcc_af) , point_fee = values(point_fee) , real_point_fee = values(real_point_fee) , seller_alipay_no = values(seller_alipay_no) , seller_can_rate = values(seller_can_rate) , seller_cod_fee = values(seller_cod_fee) , seller_email = values(seller_email) , seller_memo = values(seller_memo) , seller_mobile = values(seller_mobile) , seller_name = values(seller_name) , seller_phone = values(seller_phone) , service_tags = values(service_tags) , sid = values(sid) , pay_time = values(pay_time) , buyer_memo = values(buyer_memo) , snapshot_url = values(snapshot_url) , trade_source = values(trade_source) , rx_audit_status = values(rx_audit_status) , is_wmly = values(is_wmly) , drug_register = values(drug_register) , omni_package = values(omni_package) , omni_param = values(omni_param) , omnichannel_param = values(omnichannel_param) , omni_attr = values(omni_attr) , toptype = values(toptype) , merge_status = values(merge_status) , time_stamp = values(time_stamp) , create_time = values(create_time) , update_time = values(update_time) , ext1 = values(ext1) , ext2 = values(ext2) , ext3 = values(ext3) , ext4 = values(ext4) , ext5 = values(ext5) 
+    </insert>
+    
+    <!--通过ID修改数据-->
+    <update id="updateById">
+        UPDATE dst_111yao_doms.d_pl_tm_order_h
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="tid != null">
+                tid = #{tid},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+            <if test="olshopid != null and olshopid != ''">
+                olshopid = #{olshopid},
+            </if>
+            <if test="type != null and type != ''">
+                type = #{type},
+            </if>
+            <if test="sellerNick != null and sellerNick != ''">
+                seller_nick = #{sellerNick},
+            </if>
+            <if test="buyerNick != null and buyerNick != ''">
+                buyer_nick = #{buyerNick},
+            </if>
+            <if test="created != null">
+                created = #{created},
+            </if>
+            <if test="oaid != null and oaid != ''">
+                oaid = #{oaid},
+            </if>
+            <if test="modified != null">
+                modified = #{modified},
+            </if>
+            <if test="adjustFee != null and adjustFee != ''">
+                adjust_fee = #{adjustFee},
+            </if>
+            <if test="alipayNo != null and alipayNo != ''">
+                alipay_no = #{alipayNo},
+            </if>
+            <if test="buyerRate != null and buyerRate != ''">
+                buyer_rate = #{buyerRate},
+            </if>
+            <if test="creditCardFee != null and creditCardFee != ''">
+                credit_card_fee = #{creditCardFee},
+            </if>
+            <if test="consignTime != null">
+                consign_time = #{consignTime},
+            </if>
+            <if test="discountFee != null and discountFee != ''">
+                discount_fee = #{discountFee},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="hasYfx != null and hasYfx != ''">
+                has_yfx = #{hasYfx},
+            </if>
+            <if test="payment != null and payment != ''">
+                payment = #{payment},
+            </if>
+            <if test="postFee != null and postFee != ''">
+                post_fee = #{postFee},
+            </if>
+            <if test="receivedPayment != null and receivedPayment != ''">
+                received_payment = #{receivedPayment},
+            </if>
+            <if test="receiverAddress != null and receiverAddress != ''">
+                receiver_address = #{receiverAddress},
+            </if>
+            <if test="receiverCountry != null and receiverCountry != ''">
+                receiver_country = #{receiverCountry},
+            </if>
+            <if test="receiverState != null and receiverState != ''">
+                receiver_state = #{receiverState},
+            </if>
+            <if test="receiverCity != null and receiverCity != ''">
+                receiver_city = #{receiverCity},
+            </if>
+            <if test="receiverDistrict != null and receiverDistrict != ''">
+                receiver_district = #{receiverDistrict},
+            </if>
+            <if test="receiverTown != null and receiverTown != ''">
+                receiver_town = #{receiverTown},
+            </if>
+            <if test="receiverMobile != null and receiverMobile != ''">
+                receiver_mobile = #{receiverMobile},
+            </if>
+            <if test="receiverName != null and receiverName != ''">
+                receiver_name = #{receiverName},
+            </if>
+            <if test="receiverPhone != null and receiverPhone != ''">
+                receiver_phone = #{receiverPhone},
+            </if>
+            <if test="receiverZip != null and receiverZip != ''">
+                receiver_zip = #{receiverZip},
+            </if>
+            <if test="sellerRate != null and sellerRate != ''">
+                seller_rate = #{sellerRate},
+            </if>
+            <if test="shippingType != null and shippingType != ''">
+                shipping_type = #{shippingType},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="totalFee != null and totalFee != ''">
+                total_fee = #{totalFee},
+            </if>
+            <if test="tradeFrom != null and tradeFrom != ''">
+                trade_from = #{tradeFrom},
+            </if>
+            <if test="sellerFlag != null">
+                seller_flag = #{sellerFlag},
+            </if>
+            <if test="alipayPoint != null">
+                alipay_point = #{alipayPoint},
+            </if>
+            <if test="availableConfirmFee != null">
+                available_confirm_fee = #{availableConfirmFee},
+            </if>
+            <if test="buyerAlipayNo != null and buyerAlipayNo != ''">
+                buyer_alipay_no = #{buyerAlipayNo},
+            </if>
+            <if test="buyerArea != null and buyerArea != ''">
+                buyer_area = #{buyerArea},
+            </if>
+            <if test="buyerCodFee != null">
+                buyer_cod_fee = #{buyerCodFee},
+            </if>
+            <if test="buyerEmail != null and buyerEmail != ''">
+                buyer_email = #{buyerEmail},
+            </if>
+            <if test="buyerMessage != null and buyerMessage != ''">
+                buyer_message = #{buyerMessage},
+            </if>
+            <if test="buyerObtainPointFee != null">
+                buyer_obtain_point_fee = #{buyerObtainPointFee},
+            </if>
+            <if test="codFee != null and codFee != ''">
+                cod_fee = #{codFee},
+            </if>
+            <if test="codStatus != null and codStatus != ''">
+                cod_status = #{codStatus},
+            </if>
+            <if test="couponFee != null">
+                coupon_fee = #{couponFee},
+            </if>
+            <if test="commissionFee != null">
+                commission_fee = #{commissionFee},
+            </if>
+            <if test="hasPostFee != null and hasPostFee != ''">
+                has_post_fee = #{hasPostFee},
+            </if>
+            <if test="is3d != null and is3d != ''">
+                is_3D = #{is3d},
+            </if>
+            <if test="isBrandSale != null and isBrandSale != ''">
+                is_brand_sale = #{isBrandSale},
+            </if>
+            <if test="isDaixiao != null and isDaixiao != ''">
+                is_daixiao = #{isDaixiao},
+            </if>
+            <if test="isForceWlb != null and isForceWlb != ''">
+                is_force_wlb = #{isForceWlb},
+            </if>
+            <if test="isShShip != null and isShShip != ''">
+                is_sh_ship = #{isShShip},
+            </if>
+            <if test="isLgtype != null and isLgtype != ''">
+                is_lgtype = #{isLgtype},
+            </if>
+            <if test="isPartConsign != null and isPartConsign != ''">
+                is_part_consign = #{isPartConsign},
+            </if>
+            <if test="isWt != null and isWt != ''">
+                is_wt = #{isWt},
+            </if>
+            <if test="pccAf != null">
+                pcc_af = #{pccAf},
+            </if>
+            <if test="pointFee != null">
+                point_fee = #{pointFee},
+            </if>
+            <if test="realPointFee != null">
+                real_point_fee = #{realPointFee},
+            </if>
+            <if test="sellerAlipayNo != null and sellerAlipayNo != ''">
+                seller_alipay_no = #{sellerAlipayNo},
+            </if>
+            <if test="sellerCanRate != null and sellerCanRate != ''">
+                seller_can_rate = #{sellerCanRate},
+            </if>
+            <if test="sellerCodFee != null and sellerCodFee != ''">
+                seller_cod_fee = #{sellerCodFee},
+            </if>
+            <if test="sellerEmail != null and sellerEmail != ''">
+                seller_email = #{sellerEmail},
+            </if>
+            <if test="sellerMemo != null and sellerMemo != ''">
+                seller_memo = #{sellerMemo},
+            </if>
+            <if test="sellerMobile != null and sellerMobile != ''">
+                seller_mobile = #{sellerMobile},
+            </if>
+            <if test="sellerName != null and sellerName != ''">
+                seller_name = #{sellerName},
+            </if>
+            <if test="sellerPhone != null and sellerPhone != ''">
+                seller_phone = #{sellerPhone},
+            </if>
+            <if test="serviceTags != null">
+                service_tags = #{serviceTags},
+            </if>
+            <if test="sid != null and sid != ''">
+                sid = #{sid},
+            </if>
+            <if test="payTime != null">
+                pay_time = #{payTime},
+            </if>
+            <if test="buyerMemo != null and buyerMemo != ''">
+                buyer_memo = #{buyerMemo},
+            </if>
+            <if test="snapshotUrl != null and snapshotUrl != ''">
+                snapshot_url = #{snapshotUrl},
+            </if>
+            <if test="tradeSource != null and tradeSource != ''">
+                trade_source = #{tradeSource},
+            </if>
+            <if test="rxAuditStatus != null and rxAuditStatus != ''">
+                rx_audit_status = #{rxAuditStatus},
+            </if>
+            <if test="isWmly != null and isWmly != ''">
+                is_wmly = #{isWmly},
+            </if>
+            <if test="drugRegister != null and drugRegister != ''">
+                drug_register = #{drugRegister},
+            </if>
+            <if test="omniPackage != null and omniPackage != ''">
+                omni_package = #{omniPackage},
+            </if>
+            <if test="omniParam != null and omniParam != ''">
+                omni_param = #{omniParam},
+            </if>
+            <if test="omnichannelParam != null and omnichannelParam != ''">
+                omnichannel_param = #{omnichannelParam},
+            </if>
+            <if test="omniAttr != null and omniAttr != ''">
+                omni_attr = #{omniAttr},
+            </if>
+            <if test="toptype != null">
+                toptype = #{toptype},
+            </if>
+            <if test="mergeStatus != null">
+                merge_status = #{mergeStatus},
+            </if>
+            <if test="timeStamp != null">
+                time_stamp = #{timeStamp},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                ext4 = #{ext4},
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                ext5 = #{ext5},
+            </if>
+        </set>
+         WHERE id = #{id}
+    </update>
+    
+    <!--通过主键修改数据-->
+    <update id="updateByPk">
+        UPDATE dst_111yao_doms.d_pl_tm_order_h
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+            <if test="olshopid != null and olshopid != ''">
+                olshopid = #{olshopid},
+            </if>
+            <if test="type != null and type != ''">
+                type = #{type},
+            </if>
+            <if test="sellerNick != null and sellerNick != ''">
+                seller_nick = #{sellerNick},
+            </if>
+            <if test="buyerNick != null and buyerNick != ''">
+                buyer_nick = #{buyerNick},
+            </if>
+            <if test="created != null">
+                created = #{created},
+            </if>
+            <if test="oaid != null and oaid != ''">
+                oaid = #{oaid},
+            </if>
+            <if test="modified != null">
+                modified = #{modified},
+            </if>
+            <if test="adjustFee != null and adjustFee != ''">
+                adjust_fee = #{adjustFee},
+            </if>
+            <if test="alipayNo != null and alipayNo != ''">
+                alipay_no = #{alipayNo},
+            </if>
+            <if test="buyerRate != null and buyerRate != ''">
+                buyer_rate = #{buyerRate},
+            </if>
+            <if test="creditCardFee != null and creditCardFee != ''">
+                credit_card_fee = #{creditCardFee},
+            </if>
+            <if test="consignTime != null">
+                consign_time = #{consignTime},
+            </if>
+            <if test="discountFee != null and discountFee != ''">
+                discount_fee = #{discountFee},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="hasYfx != null and hasYfx != ''">
+                has_yfx = #{hasYfx},
+            </if>
+            <if test="payment != null and payment != ''">
+                payment = #{payment},
+            </if>
+            <if test="postFee != null and postFee != ''">
+                post_fee = #{postFee},
+            </if>
+            <if test="receivedPayment != null and receivedPayment != ''">
+                received_payment = #{receivedPayment},
+            </if>
+            <if test="receiverAddress != null and receiverAddress != ''">
+                receiver_address = #{receiverAddress},
+            </if>
+            <if test="receiverCountry != null and receiverCountry != ''">
+                receiver_country = #{receiverCountry},
+            </if>
+            <if test="receiverState != null and receiverState != ''">
+                receiver_state = #{receiverState},
+            </if>
+            <if test="receiverCity != null and receiverCity != ''">
+                receiver_city = #{receiverCity},
+            </if>
+            <if test="receiverDistrict != null and receiverDistrict != ''">
+                receiver_district = #{receiverDistrict},
+            </if>
+            <if test="receiverTown != null and receiverTown != ''">
+                receiver_town = #{receiverTown},
+            </if>
+            <if test="receiverMobile != null and receiverMobile != ''">
+                receiver_mobile = #{receiverMobile},
+            </if>
+            <if test="receiverName != null and receiverName != ''">
+                receiver_name = #{receiverName},
+            </if>
+            <if test="receiverPhone != null and receiverPhone != ''">
+                receiver_phone = #{receiverPhone},
+            </if>
+            <if test="receiverZip != null and receiverZip != ''">
+                receiver_zip = #{receiverZip},
+            </if>
+            <if test="sellerRate != null and sellerRate != ''">
+                seller_rate = #{sellerRate},
+            </if>
+            <if test="shippingType != null and shippingType != ''">
+                shipping_type = #{shippingType},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="totalFee != null and totalFee != ''">
+                total_fee = #{totalFee},
+            </if>
+            <if test="tradeFrom != null and tradeFrom != ''">
+                trade_from = #{tradeFrom},
+            </if>
+            <if test="sellerFlag != null">
+                seller_flag = #{sellerFlag},
+            </if>
+            <if test="alipayPoint != null">
+                alipay_point = #{alipayPoint},
+            </if>
+            <if test="availableConfirmFee != null">
+                available_confirm_fee = #{availableConfirmFee},
+            </if>
+            <if test="buyerAlipayNo != null and buyerAlipayNo != ''">
+                buyer_alipay_no = #{buyerAlipayNo},
+            </if>
+            <if test="buyerArea != null and buyerArea != ''">
+                buyer_area = #{buyerArea},
+            </if>
+            <if test="buyerCodFee != null">
+                buyer_cod_fee = #{buyerCodFee},
+            </if>
+            <if test="buyerEmail != null and buyerEmail != ''">
+                buyer_email = #{buyerEmail},
+            </if>
+            <if test="buyerMessage != null and buyerMessage != ''">
+                buyer_message = #{buyerMessage},
+            </if>
+            <if test="buyerObtainPointFee != null">
+                buyer_obtain_point_fee = #{buyerObtainPointFee},
+            </if>
+            <if test="codFee != null and codFee != ''">
+                cod_fee = #{codFee},
+            </if>
+            <if test="codStatus != null and codStatus != ''">
+                cod_status = #{codStatus},
+            </if>
+            <if test="couponFee != null">
+                coupon_fee = #{couponFee},
+            </if>
+            <if test="commissionFee != null">
+                commission_fee = #{commissionFee},
+            </if>
+            <if test="hasPostFee != null and hasPostFee != ''">
+                has_post_fee = #{hasPostFee},
+            </if>
+            <if test="is3d != null and is3d != ''">
+                is_3D = #{is3d},
+            </if>
+            <if test="isBrandSale != null and isBrandSale != ''">
+                is_brand_sale = #{isBrandSale},
+            </if>
+            <if test="isDaixiao != null and isDaixiao != ''">
+                is_daixiao = #{isDaixiao},
+            </if>
+            <if test="isForceWlb != null and isForceWlb != ''">
+                is_force_wlb = #{isForceWlb},
+            </if>
+            <if test="isShShip != null and isShShip != ''">
+                is_sh_ship = #{isShShip},
+            </if>
+            <if test="isLgtype != null and isLgtype != ''">
+                is_lgtype = #{isLgtype},
+            </if>
+            <if test="isPartConsign != null and isPartConsign != ''">
+                is_part_consign = #{isPartConsign},
+            </if>
+            <if test="isWt != null and isWt != ''">
+                is_wt = #{isWt},
+            </if>
+            <if test="pccAf != null">
+                pcc_af = #{pccAf},
+            </if>
+            <if test="pointFee != null">
+                point_fee = #{pointFee},
+            </if>
+            <if test="realPointFee != null">
+                real_point_fee = #{realPointFee},
+            </if>
+            <if test="sellerAlipayNo != null and sellerAlipayNo != ''">
+                seller_alipay_no = #{sellerAlipayNo},
+            </if>
+            <if test="sellerCanRate != null and sellerCanRate != ''">
+                seller_can_rate = #{sellerCanRate},
+            </if>
+            <if test="sellerCodFee != null and sellerCodFee != ''">
+                seller_cod_fee = #{sellerCodFee},
+            </if>
+            <if test="sellerEmail != null and sellerEmail != ''">
+                seller_email = #{sellerEmail},
+            </if>
+            <if test="sellerMemo != null and sellerMemo != ''">
+                seller_memo = #{sellerMemo},
+            </if>
+            <if test="sellerMobile != null and sellerMobile != ''">
+                seller_mobile = #{sellerMobile},
+            </if>
+            <if test="sellerName != null and sellerName != ''">
+                seller_name = #{sellerName},
+            </if>
+            <if test="sellerPhone != null and sellerPhone != ''">
+                seller_phone = #{sellerPhone},
+            </if>
+            <if test="serviceTags != null">
+                service_tags = #{serviceTags},
+            </if>
+            <if test="sid != null and sid != ''">
+                sid = #{sid},
+            </if>
+            <if test="payTime != null">
+                pay_time = #{payTime},
+            </if>
+            <if test="buyerMemo != null and buyerMemo != ''">
+                buyer_memo = #{buyerMemo},
+            </if>
+            <if test="snapshotUrl != null and snapshotUrl != ''">
+                snapshot_url = #{snapshotUrl},
+            </if>
+            <if test="tradeSource != null and tradeSource != ''">
+                trade_source = #{tradeSource},
+            </if>
+            <if test="rxAuditStatus != null and rxAuditStatus != ''">
+                rx_audit_status = #{rxAuditStatus},
+            </if>
+            <if test="isWmly != null and isWmly != ''">
+                is_wmly = #{isWmly},
+            </if>
+            <if test="drugRegister != null and drugRegister != ''">
+                drug_register = #{drugRegister},
+            </if>
+            <if test="omniPackage != null and omniPackage != ''">
+                omni_package = #{omniPackage},
+            </if>
+            <if test="omniParam != null and omniParam != ''">
+                omni_param = #{omniParam},
+            </if>
+            <if test="omnichannelParam != null and omnichannelParam != ''">
+                omnichannel_param = #{omnichannelParam},
+            </if>
+            <if test="omniAttr != null and omniAttr != ''">
+                omni_attr = #{omniAttr},
+            </if>
+            <if test="toptype != null">
+                toptype = #{toptype},
+            </if>
+            <if test="mergeStatus != null">
+                merge_status = #{mergeStatus},
+            </if>
+            <if test="timeStamp != null">
+                time_stamp = #{timeStamp},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                ext4 = #{ext4},
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                ext5 = #{ext5},
+            </if>
+        </set>
+         WHERE     tid = #{tid}
+    </update>
+    
+    <!--通过ID删除-->
+    <delete id="deleteById">
+        DELETE FROM dst_111yao_doms.d_pl_tm_order_h
+         WHERE id = #{id}
+    </delete>
+    
+    <!--通过主键删除-->
+    <delete id="deleteByPk">
+        DELETE FROM dst_111yao_doms.d_pl_tm_order_h
+         WHERE     tid = #{tid}
+    </delete>
+    
+</mapper>
