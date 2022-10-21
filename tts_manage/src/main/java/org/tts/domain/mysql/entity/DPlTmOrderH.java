@@ -1,5 +1,7 @@
 package org.tts.domain.mysql.entity;
 
+import lombok.Builder;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +11,7 @@ import java.io.Serializable;
  * @author Tianjx
  * @since 2022-10-12 14:45:55
  */
+@Builder
 public class DPlTmOrderH implements Serializable {
     private static final long serialVersionUID = -88828104234267644L;
     /**
