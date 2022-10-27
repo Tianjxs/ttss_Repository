@@ -52,7 +52,7 @@ public class RabbitMQConfig {
     public Queue normalQueue() {
         //队列的一些属性
         Map<String, Object> arguments = new HashMap<>();
-        arguments.put("x-message-ttl", 10000);//消息过期时间，单位ms，可以不设置，可以由生产者设置消息过期时间
+        arguments.put("x-message-ttl", 20000);//消息过期时间，单位ms，可以不设置，可以由生产者设置消息过期时间
         arguments.put("x-dead-letter-exchange", DEAD_EXCHANGE);//设置消息过期后转发到哪个交换器
         arguments.put("x-dead-letter-routing-key", DEAD_ROUTE_KEY);//设置消息过期后由交换器路由到哪个队列的路由键
         // arguments.put("x-max-length", 6);//设置队列的长度，能存储消息的个数

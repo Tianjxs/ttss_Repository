@@ -37,9 +37,8 @@ public class RabbitSendCallBackController {
              */
             @Override
             public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-                String id = correlationData.getId();
                 Message returnedMessage = correlationData.getReturnedMessage();
-                log.info("confirm消息回调,id为{},msg为{},ack为{},cause为{},correlationData为{}",id,returnedMessage,ack,cause,correlationData);
+                log.info("confirm消息回调,id为{},msg为{},ack为{},cause为{},correlationData为{}",null,returnedMessage,ack,cause,correlationData);
             }
         });
     }

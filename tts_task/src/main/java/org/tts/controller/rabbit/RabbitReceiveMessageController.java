@@ -11,6 +11,7 @@ import org.tts.domain.mysql.entity.DPlTmOrderH;
 import org.tts.domain.mysql.entity.DWareBase;
 
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * @Description : spingboot 整合rabbit
@@ -28,7 +29,7 @@ public class RabbitReceiveMessageController {
 
     @RabbitListener(queues = {RabbitMQConfig.DEAD_QUEUE_NAME})
     public void receiveRabbitMessage(Message message, Channel channel) throws IOException {
-        log.info("消费者1接收dead_queue队列的消息：[{}]", new String(message.getBody()));
+        log.info("消费者1接收dead_queue队列的消息：[{}],当前时间点为{}", new String(message.getBody()),new Date().toString());
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         channel.basicAck(deliveryTag,false);
     }

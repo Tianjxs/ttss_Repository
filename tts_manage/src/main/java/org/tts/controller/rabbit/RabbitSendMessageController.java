@@ -12,6 +12,7 @@ import org.tts.config.RabbitMQConfig;
 import org.tts.domain.mysql.entity.DPlTmOrderH;
 import org.tts.domain.mysql.entity.DWareBase;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -36,8 +37,12 @@ public class RabbitSendMessageController {
     @GetMapping("message/{message}/{ttlTime}")
     public void sendMessageTTL(@PathVariable String message, @PathVariable String ttlTime) {
         log.info("发送带有过期时间的消息到MQ - 消息内容 [{}] - 存活时间 [{}]", JSON.toJSONString(message), JSON.toJSONString(ttlTime));
-        rabbitTemplate.convertAndSend(RabbitMQConfig.NOMAL_EXCHANGE, RabbitMQConfig.NOMAL_ROUTE_KEY, message.getBytes(), correlationData -> {
+        log.info("发送消息当前时间：{}", new Date().toString());
+
+
+        rabbitTemplate.convertAndSend(RabbitMQConfig.NOMAL_EXCHANGE, RabbitMQConfig.NOMAL_ROUTE_KEY, message, correlationData -> {
             //设置消息过期时间
+            correlationData.getMessageProperties().setDelay(5);
             correlationData.getMessageProperties().setExpiration(ttlTime);
             return correlationData;
         });

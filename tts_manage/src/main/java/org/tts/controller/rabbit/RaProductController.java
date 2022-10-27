@@ -17,8 +17,8 @@ import org.tts.util.RabbitConnectUtils;
 @RestController
 public class RaProductController {
 
-    @Autowired
-    private RabbitAdmin rabbitAdmin ;
+//    @Autowired
+//    private RabbitAdmin rabbitAdmin ;
 //    private Connection connection ;
 //
 //    private Channel channel;
@@ -118,8 +118,8 @@ public class RaProductController {
 //        channel.basicPublish(exchange,topic, MessageProperties.PERSISTENT_TEXT_PLAIN,msg.getBytes());
 //        System.out.println("生产者成功发送消息");
 //    }
-    @GetMapping("test/rabbit/admin")
+   /* @GetMapping("test/rabbit/admin")
     public void testRabbitAdmin(){
         rabbitAdmin.declareQueue(new Queue("admin_fanout_queue",false)) ;
-    }
+    }*/
 }
