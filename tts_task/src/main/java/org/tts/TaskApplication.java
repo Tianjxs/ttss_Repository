@@ -6,29 +6,20 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableTransactionManagement
 @EnableFeignClients(basePackages = {"org.tts"})
-public class ProviderApplicationTwo extends SpringBootServletInitializer {
-
-    public ProviderApplicationTwo() {
-    }
+public class TaskApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderApplicationTwo.class, args);
+        SpringApplication.run(TaskApplication.class, args);
     }
-    @Bean
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(TaskApplication.class);
     }
 
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(new Class[]{ProviderApplicationTwo.class});
-    }
 }
