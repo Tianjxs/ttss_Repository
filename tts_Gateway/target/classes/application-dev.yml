@@ -1,0 +1,37 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.70.101.93:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: springboot-base-service
+          uri: lb://tts-manage
+          predicates:
+            - Path=/springboot/**
+            - Header=userinfo
+            - Method=GET
+#            - Query=baz
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/springboot/fallback
+#            对于所有匹配的请求，将会给传给下游的请求添加一个请求头 X-Request-Foo:Bar
+#            - AddRequestHeader=x-Request-Foo,bar
+#            - AddRequestParameter=baz,helloGateway
+
+# hystrix设置隔离策略为信号量，超时时间为2秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 2000
