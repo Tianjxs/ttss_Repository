@@ -30,4 +30,9 @@ public class TestController {
         System.out.println("嘻嘻嘻");
         return JSON.toJSONString(resultMap) ;
     }
+
+    @GetMapping("/getHello")
+    public String getHello(){
+        return "hello from nacos task!";
+    }
 }
