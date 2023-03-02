@@ -1,5 +1,6 @@
 package org.tts.controller.rabbit;
 
+import com.alibaba.fastjson.JSON;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -29,7 +30,7 @@ public class RabbitReceiveMessageController {
 
     @RabbitListener(queues = {RabbitMQConfig.DEAD_QUEUE_NAME})
     public void receiveRabbitMessage(Message message, Channel channel) throws IOException {
-        log.info("消费者1接收dead_queue队列的消息：[{}],当前时间点为{}", new String(message.getBody()),new Date().toString());
+        log.info("死信队列接收消息[{}],当前时间点为{}", JSON.toJSONString(message),new Date());
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         channel.basicAck(deliveryTag,false);
     }

@@ -19,7 +19,7 @@ public class RabbitConnectUtils {
         ConnectionFactory connectionFactory =new ConnectionFactory();
         connectionFactory.setHost("127.0.0.1");
         connectionFactory.setPort(5672);
-        connectionFactory.setVirtualHost("/tts");
+        connectionFactory.setVirtualHost("/");
         connectionFactory.setUsername("tts");
         connectionFactory.setPassword("tts123");
         Connection connection = connectionFactory.newConnection();

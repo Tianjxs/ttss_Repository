@@ -5,12 +5,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.web.bind.annotation.RestController;
 import org.tts.config.RabbitMQConfig;
 import org.tts.domain.mysql.entity.DPlTmOrderH;
 import org.tts.domain.mysql.entity.DWareBase;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -20,8 +22,10 @@ import java.util.Date;
  */
 @RestController
 @Slf4j
-@RabbitListener(queues = {RabbitMQConfig.NOMAL_QUEUE_NAME})
-public class RabbitReceiveNormalController {
+
+public class RabbitReceiveNormal_2Controller {
+
+    SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //设置时间格式
     /**
      * 分别接收不同类型的消息
      * @param dPlTmOrderH
@@ -46,9 +50,18 @@ public class RabbitReceiveNormalController {
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         channel.basicAck(deliveryTag,false);
     }
+
+    /**
+     * 如果使用 containerFactory 不能将 @RabbitListener 注解用于类上,只能用于方法上,否则会报找不到方法异常
+     * @param message
+     * @param channel
+     * @param msg
+     * @throws IOException
+     */
     @RabbitHandler
+    //@RabbitListener(queues = {RabbitMQConfig.DIRECT_QUEUE_NAME},containerFactory = "mqConsumerlistenerContainer")
     public void receive(Message message,Channel channel,String msg) throws IOException {
-        log.info("消费者msg接收：{},当前时间点为{}",msg,new Date().toString());
+        log.info("消费者_2_接收:{},当前时间点为{}",msg,sdf.format(new Date()) );
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         channel.basicAck(deliveryTag,false);
     }

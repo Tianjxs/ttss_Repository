@@ -1,6 +1,9 @@
 package org.tts.domain.mysql.entity;
 
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 import java.io.Serializable;

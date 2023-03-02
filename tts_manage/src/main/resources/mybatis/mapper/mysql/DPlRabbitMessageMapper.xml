@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tts.domain.mysql.DPlRabbitMessageMapper">
+    
+    <resultMap type="org.tts.domain.mysql.entity.DPlRabbitMessage" id="DPlRabbitMessageMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderId" column="order_id" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="exchangename" column="exchangeName" jdbcType="VARCHAR"/>
+        <result property="routingkey" column="routingKey" jdbcType="VARCHAR"/>
+        <result property="queuename" column="queueName" jdbcType="VARCHAR"/>
+        <result property="maxtrycount" column="maxTryCount" jdbcType="INTEGER"/>
+        <result property="currentretrycount" column="currentRetryCount" jdbcType="INTEGER"/>
+        <result property="retryintervaltime" column="retryIntervalTime" jdbcType="INTEGER"/>
+        <result property="message" column="message" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="ext1" column="ext1" jdbcType="VARCHAR"/>
+        <result property="ext2" column="ext2" jdbcType="VARCHAR"/>
+        <result property="ext3" column="ext3" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <!--查询单个-->
+    <select id="queryById" resultMap="DPlRabbitMessageMap">
+        SELECT id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3
+          FROM dst_111yao_doms.d_pl_rabbit_message
+         WHERE id = #{id}
+    </select>
+    
+    <!--通过主键查询-->
+    <select id="queryByPk" resultMap="DPlRabbitMessageMap">
+        SELECT id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3
+          FROM dst_111yao_doms.d_pl_rabbit_message
+         WHERE     order_id = #{orderId}
+           AND     type = #{type}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DPlRabbitMessageMap">
+        SELECT id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3
+          FROM dst_111yao_doms.d_pl_rabbit_message
+         LIMIT #{offset}, #{limit}
+    </select>
+    
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="DPlRabbitMessageMap">
+        SELECT id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3
+          FROM dst_111yao_doms.d_pl_rabbit_message
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="orderId != null and orderId != ''">
+                AND order_id = #{orderId}
+            </if>
+            <if test="type != null">
+                AND type = #{type}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+            <if test="exchangename != null and exchangename != ''">
+                AND exchangeName = #{exchangename}
+            </if>
+            <if test="routingkey != null and routingkey != ''">
+                AND routingKey = #{routingkey}
+            </if>
+            <if test="queuename != null and queuename != ''">
+                AND queueName = #{queuename}
+            </if>
+            <if test="maxtrycount != null">
+                AND maxTryCount = #{maxtrycount}
+            </if>
+            <if test="currentretrycount != null">
+                AND currentRetryCount = #{currentretrycount}
+            </if>
+            <if test="retryintervaltime != null">
+                AND retryIntervalTime = #{retryintervaltime}
+            </if>
+            <if test="message != null and message != ''">
+                AND message = #{message}
+            </if>
+            <if test="createTime != null">
+                AND create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                AND update_time = #{updateTime}
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                AND ext1 = #{ext1}
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                AND ext2 = #{ext2}
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                AND ext3 = #{ext3}
+            </if>
+        </where>
+    </select>
+    
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="orderId" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_rabbit_message(id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3)
+        VALUES (#{id}, #{orderId}, #{type}, #{status}, #{exchangename}, #{routingkey}, #{queuename}, #{maxtrycount}, #{currentretrycount}, #{retryintervaltime}, #{message}, #{createTime}, #{updateTime}, #{ext1}, #{ext2}, #{ext3})
+    </insert>
+    
+    <insert id="insertBatch" keyProperty="orderId" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_rabbit_message(id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.orderId}, #{entity.type}, #{entity.status}, #{entity.exchangename}, #{entity.routingkey}, #{entity.queuename}, #{entity.maxtrycount}, #{entity.currentretrycount}, #{entity.retryintervaltime}, #{entity.message}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3})
+        </foreach>
+    </insert>
+    
+    <insert id="insertOrUpdateBatch" keyProperty="orderId" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_rabbit_message(id, order_id, type, status, exchangeName, routingKey, queueName, maxTryCount, currentRetryCount, retryIntervalTime, message, create_time, update_time, ext1, ext2, ext3)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.orderId}, #{entity.type}, #{entity.status}, #{entity.exchangename}, #{entity.routingkey}, #{entity.queuename}, #{entity.maxtrycount}, #{entity.currentretrycount}, #{entity.retryintervaltime}, #{entity.message}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+            id = values(id) , order_id = values(order_id) , type = values(type) , status = values(status) , exchangeName = values(exchangeName) , routingKey = values(routingKey) , queueName = values(queueName) , maxTryCount = values(maxTryCount) , currentRetryCount = values(currentRetryCount) , retryIntervalTime = values(retryIntervalTime) , message = values(message) , create_time = values(create_time) , update_time = values(update_time) , ext1 = values(ext1) , ext2 = values(ext2) , ext3 = values(ext3) 
+    </insert>
+    
+    <!--通过ID修改数据-->
+    <update id="updateById">
+        UPDATE dst_111yao_doms.d_pl_rabbit_message
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="orderId != null and orderId != ''">
+                order_id = #{orderId},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="exchangename != null and exchangename != ''">
+                exchangeName = #{exchangename},
+            </if>
+            <if test="routingkey != null and routingkey != ''">
+                routingKey = #{routingkey},
+            </if>
+            <if test="queuename != null and queuename != ''">
+                queueName = #{queuename},
+            </if>
+            <if test="maxtrycount != null">
+                maxTryCount = #{maxtrycount},
+            </if>
+            <if test="currentretrycount != null">
+                currentRetryCount = #{currentretrycount},
+            </if>
+            <if test="retryintervaltime != null">
+                retryIntervalTime = #{retryintervaltime},
+            </if>
+            <if test="message != null and message != ''">
+                message = #{message},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+        </set>
+         WHERE id = #{id}
+    </update>
+    
+    <!--通过主键修改数据-->
+    <update id="updateByPk">
+        UPDATE dst_111yao_doms.d_pl_rabbit_message
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="exchangename != null and exchangename != ''">
+                exchangeName = #{exchangename},
+            </if>
+            <if test="routingkey != null and routingkey != ''">
+                routingKey = #{routingkey},
+            </if>
+            <if test="queuename != null and queuename != ''">
+                queueName = #{queuename},
+            </if>
+            <if test="maxtrycount != null">
+                maxTryCount = #{maxtrycount},
+            </if>
+            <if test="currentretrycount != null">
+                currentRetryCount = #{currentretrycount},
+            </if>
+            <if test="retryintervaltime != null">
+                retryIntervalTime = #{retryintervaltime},
+            </if>
+            <if test="message != null and message != ''">
+                message = #{message},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+        </set>
+         WHERE     order_id = #{orderId}
+           AND     type = #{type}
+    </update>
+    
+    <!--通过ID删除-->
+    <delete id="deleteById">
+        DELETE FROM dst_111yao_doms.d_pl_rabbit_message
+         WHERE id = #{id}
+    </delete>
+    
+    <!--通过主键删除-->
+    <delete id="deleteByPk">
+        DELETE FROM dst_111yao_doms.d_pl_rabbit_message
+         WHERE     order_id = #{orderId}
+           AND     type = #{type}
+    </delete>
+    
+</mapper>

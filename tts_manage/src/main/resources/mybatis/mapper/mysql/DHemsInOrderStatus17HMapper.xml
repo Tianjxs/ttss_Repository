@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tts.domain.mysql.DHemsInOrderStatus17HMapper">
+    
+    <resultMap type="org.tts.domain.mysql.entity.DHemsInOrderStatus17H" id="DHemsInOrderStatus17HMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderId" column="order_id" jdbcType="VARCHAR"/>
+        <result property="olorderno" column="olorderno" jdbcType="VARCHAR"/>
+        <result property="stautsOflineHems" column="stauts_ofline_hems" jdbcType="INTEGER"/>
+        <result property="statusOflineDoms" column="status_ofline_doms" jdbcType="VARCHAR"/>
+        <result property="timershaftid" column="timerShaftId" jdbcType="INTEGER"/>
+        <result property="sapno" column="sapno" jdbcType="VARCHAR"/>
+        <result property="sappickno" column="sappickno" jdbcType="VARCHAR"/>
+        <result property="lastTimestamp" column="last_timestamp" jdbcType="TIMESTAMP"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="orderV" column="order_v" jdbcType="INTEGER"/>
+        <result property="additional1" column="additional1" jdbcType="VARCHAR"/>
+        <result property="additional2" column="additional2" jdbcType="VARCHAR"/>
+        <result property="additional3" column="additional3" jdbcType="VARCHAR"/>
+        <result property="additional4" column="additional4" jdbcType="VARCHAR"/>
+        <result property="additional5" column="additional5" jdbcType="VARCHAR"/>
+        <result property="timeStamp" column="time_stamp" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="ext1" column="ext1" jdbcType="VARCHAR"/>
+        <result property="ext2" column="ext2" jdbcType="VARCHAR"/>
+        <result property="ext3" column="ext3" jdbcType="VARCHAR"/>
+        <result property="ext4" column="ext4" jdbcType="VARCHAR"/>
+        <result property="ext5" column="ext5" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <!--查询单个-->
+    <select id="queryById" resultMap="DHemsInOrderStatus17HMap">
+        SELECT id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_hems_in_order_status_17_h
+         WHERE id = #{id}
+    </select>
+    
+    <!--通过主键查询-->
+    <select id="queryByPk" resultMap="DHemsInOrderStatus17HMap">
+        SELECT id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_hems_in_order_status_17_h
+         WHERE     order_id = #{orderId}
+           AND     stauts_ofline_hems = #{stautsOflineHems}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DHemsInOrderStatus17HMap">
+        SELECT id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_hems_in_order_status_17_h
+         LIMIT #{offset}, #{limit}
+    </select>
+    
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="DHemsInOrderStatus17HMap">
+        SELECT id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_hems_in_order_status_17_h
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="orderId != null and orderId != ''">
+                AND order_id = #{orderId}
+            </if>
+            <if test="olorderno != null and olorderno != ''">
+                AND olorderno = #{olorderno}
+            </if>
+            <if test="stautsOflineHems != null">
+                AND stauts_ofline_hems = #{stautsOflineHems}
+            </if>
+            <if test="statusOflineDoms != null and statusOflineDoms != ''">
+                AND status_ofline_doms = #{statusOflineDoms}
+            </if>
+            <if test="timershaftid != null">
+                AND timerShaftId = #{timershaftid}
+            </if>
+            <if test="sapno != null and sapno != ''">
+                AND sapno = #{sapno}
+            </if>
+            <if test="sappickno != null and sappickno != ''">
+                AND sappickno = #{sappickno}
+            </if>
+            <if test="lastTimestamp != null">
+                AND last_timestamp = #{lastTimestamp}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+            <if test="orderV != null">
+                AND order_v = #{orderV}
+            </if>
+            <if test="additional1 != null and additional1 != ''">
+                AND additional1 = #{additional1}
+            </if>
+            <if test="additional2 != null and additional2 != ''">
+                AND additional2 = #{additional2}
+            </if>
+            <if test="additional3 != null and additional3 != ''">
+                AND additional3 = #{additional3}
+            </if>
+            <if test="additional4 != null and additional4 != ''">
+                AND additional4 = #{additional4}
+            </if>
+            <if test="additional5 != null and additional5 != ''">
+                AND additional5 = #{additional5}
+            </if>
+            <if test="timeStamp != null">
+                AND time_stamp = #{timeStamp}
+            </if>
+            <if test="createTime != null">
+                AND create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                AND update_time = #{updateTime}
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                AND ext1 = #{ext1}
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                AND ext2 = #{ext2}
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                AND ext3 = #{ext3}
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                AND ext4 = #{ext4}
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                AND ext5 = #{ext5}
+            </if>
+        </where>
+    </select>
+    
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="orderId" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_hems_in_order_status_17_h(id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES (#{id}, #{orderId}, #{olorderno}, #{stautsOflineHems}, #{statusOflineDoms}, #{timershaftid}, #{sapno}, #{sappickno}, #{lastTimestamp}, #{status}, #{orderV}, #{additional1}, #{additional2}, #{additional3}, #{additional4}, #{additional5}, #{timeStamp}, #{createTime}, #{updateTime}, #{ext1}, #{ext2}, #{ext3}, #{ext4}, #{ext5})
+    </insert>
+    
+    <insert id="insertBatch" keyProperty="orderId" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_hems_in_order_status_17_h(id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.orderId}, #{entity.olorderno}, #{entity.stautsOflineHems}, #{entity.statusOflineDoms}, #{entity.timershaftid}, #{entity.sapno}, #{entity.sappickno}, #{entity.lastTimestamp}, #{entity.status}, #{entity.orderV}, #{entity.additional1}, #{entity.additional2}, #{entity.additional3}, #{entity.additional4}, #{entity.additional5}, #{entity.timeStamp}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3}, #{entity.ext4}, #{entity.ext5})
+        </foreach>
+    </insert>
+    
+    <insert id="insertOrUpdateBatch" keyProperty="orderId" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_hems_in_order_status_17_h(id, order_id, olorderno, stauts_ofline_hems, status_ofline_doms, timerShaftId, sapno, sappickno, last_timestamp, status, order_v, additional1, additional2, additional3, additional4, additional5, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.orderId}, #{entity.olorderno}, #{entity.stautsOflineHems}, #{entity.statusOflineDoms}, #{entity.timershaftid}, #{entity.sapno}, #{entity.sappickno}, #{entity.lastTimestamp}, #{entity.status}, #{entity.orderV}, #{entity.additional1}, #{entity.additional2}, #{entity.additional3}, #{entity.additional4}, #{entity.additional5}, #{entity.timeStamp}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3}, #{entity.ext4}, #{entity.ext5})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+            id = values(id) , order_id = values(order_id) , olorderno = values(olorderno) , stauts_ofline_hems = values(stauts_ofline_hems) , status_ofline_doms = values(status_ofline_doms) , timerShaftId = values(timerShaftId) , sapno = values(sapno) , sappickno = values(sappickno) , last_timestamp = values(last_timestamp) , status = values(status) , order_v = values(order_v) , additional1 = values(additional1) , additional2 = values(additional2) , additional3 = values(additional3) , additional4 = values(additional4) , additional5 = values(additional5) , create_time = values(create_time) , update_time = values(update_time) , ext1 = values(ext1) , ext2 = values(ext2) , ext3 = values(ext3) , ext4 = values(ext4) , ext5 = values(ext5) 
+    </insert>
+    
+    <!--通过ID修改数据-->
+    <update id="updateById">
+        UPDATE dst_111yao_doms.d_hems_in_order_status_17_h
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="orderId != null and orderId != ''">
+                order_id = #{orderId},
+            </if>
+            <if test="olorderno != null and olorderno != ''">
+                olorderno = #{olorderno},
+            </if>
+            <if test="stautsOflineHems != null">
+                stauts_ofline_hems = #{stautsOflineHems},
+            </if>
+            <if test="statusOflineDoms != null and statusOflineDoms != ''">
+                status_ofline_doms = #{statusOflineDoms},
+            </if>
+            <if test="timershaftid != null">
+                timerShaftId = #{timershaftid},
+            </if>
+            <if test="sapno != null and sapno != ''">
+                sapno = #{sapno},
+            </if>
+            <if test="sappickno != null and sappickno != ''">
+                sappickno = #{sappickno},
+            </if>
+            <if test="lastTimestamp != null">
+                last_timestamp = #{lastTimestamp},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="orderV != null">
+                order_v = #{orderV},
+            </if>
+            <if test="additional1 != null and additional1 != ''">
+                additional1 = #{additional1},
+            </if>
+            <if test="additional2 != null and additional2 != ''">
+                additional2 = #{additional2},
+            </if>
+            <if test="additional3 != null and additional3 != ''">
+                additional3 = #{additional3},
+            </if>
+            <if test="additional4 != null and additional4 != ''">
+                additional4 = #{additional4},
+            </if>
+            <if test="additional5 != null and additional5 != ''">
+                additional5 = #{additional5},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                ext4 = #{ext4},
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                ext5 = #{ext5},
+            </if>
+        </set>
+         WHERE id = #{id}
+    </update>
+    
+    <!--通过主键修改数据-->
+    <update id="updateByPk">
+        UPDATE dst_111yao_doms.d_hems_in_order_status_17_h
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="olorderno != null and olorderno != ''">
+                olorderno = #{olorderno},
+            </if>
+            <if test="statusOflineDoms != null and statusOflineDoms != ''">
+                status_ofline_doms = #{statusOflineDoms},
+            </if>
+            <if test="timershaftid != null">
+                timerShaftId = #{timershaftid},
+            </if>
+            <if test="sapno != null and sapno != ''">
+                sapno = #{sapno},
+            </if>
+            <if test="sappickno != null and sappickno != ''">
+                sappickno = #{sappickno},
+            </if>
+            <if test="lastTimestamp != null">
+                last_timestamp = #{lastTimestamp},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="orderV != null">
+                order_v = #{orderV},
+            </if>
+            <if test="additional1 != null and additional1 != ''">
+                additional1 = #{additional1},
+            </if>
+            <if test="additional2 != null and additional2 != ''">
+                additional2 = #{additional2},
+            </if>
+            <if test="additional3 != null and additional3 != ''">
+                additional3 = #{additional3},
+            </if>
+            <if test="additional4 != null and additional4 != ''">
+                additional4 = #{additional4},
+            </if>
+            <if test="additional5 != null and additional5 != ''">
+                additional5 = #{additional5},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                ext4 = #{ext4},
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                ext5 = #{ext5},
+            </if>
+        </set>
+         WHERE     order_id = #{orderId}
+           AND     stauts_ofline_hems = #{stautsOflineHems}
+    </update>
+    
+    <!--通过ID删除-->
+    <delete id="deleteById">
+        DELETE FROM dst_111yao_doms.d_hems_in_order_status_17_h
+         WHERE id = #{id}
+    </delete>
+    
+    <!--通过主键删除-->
+    <delete id="deleteByPk">
+        DELETE FROM dst_111yao_doms.d_hems_in_order_status_17_h
+         WHERE     order_id = #{orderId}
+           AND     stauts_ofline_hems = #{stautsOflineHems}
+    </delete>
+    
+</mapper>
