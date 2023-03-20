@@ -35,10 +35,10 @@ public class DesignModeController {
                 notifier.notify(dPlTmOrderH);
             }
         }*/
-        MessageNotifier notifierService = strategyDesignContext.getNotifierService(type);
-        if(notifierService.support(type)){
-            DPlTmOrderH dPlTmOrderH = DPlTmOrderH.builder().id(Integer.valueOf(1).longValue()).tid(1442715891217544389L).status("TRADE_FINISHED").olshopid("1").build();
-            notifierService.notify(dPlTmOrderH);
-        }
+//        MessageNotifier notifierService = strategyDesignContext.getNotifierService(type);
+//        if(notifierService.support(type)){
+//            DPlTmOrderH dPlTmOrderH = DPlTmOrderH.builder().id(Integer.valueOf(1).longValue()).tid(1442715891217544389L).status("TRADE_FINISHED").olshopid("1").build();
+//            notifierService.notify(dPlTmOrderH);
+//        }
     }
 }

@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tts.domain.mysql.DPlTmOrderOrdersDMapper">
+    
+    <resultMap type="org.tts.domain.mysql.entity.DPlTmOrderOrdersD" id="DPlTmOrderOrdersDMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="tid" column="tid" jdbcType="INTEGER"/>
+        <result property="olshopid" column="olshopid" jdbcType="VARCHAR"/>
+        <result property="oid" column="oid" jdbcType="VARCHAR"/>
+        <result property="adjustFee" column="adjust_fee" jdbcType="VARCHAR"/>
+        <result property="buyerRate" column="buyer_rate" jdbcType="VARCHAR"/>
+        <result property="cid" column="cid" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="refundStatus" column="refund_status" jdbcType="VARCHAR"/>
+        <result property="consignTime" column="consign_time" jdbcType="VARCHAR"/>
+        <result property="discountFee" column="discount_fee" jdbcType="VARCHAR"/>
+        <result property="divideOrderFee" column="divide_order_fee" jdbcType="VARCHAR"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="invoiceNo" column="invoice_no" jdbcType="VARCHAR"/>
+        <result property="isDaixiao" column="is_daixiao" jdbcType="VARCHAR"/>
+        <result property="isOversold" column="is_oversold" jdbcType="VARCHAR"/>
+        <result property="logisticsCompany" column="logistics_company" jdbcType="VARCHAR"/>
+        <result property="num" column="num" jdbcType="INTEGER"/>
+        <result property="numIid" column="num_iid" jdbcType="INTEGER"/>
+        <result property="orderFrom" column="order_from" jdbcType="VARCHAR"/>
+        <result property="outerIid" column="outer_iid" jdbcType="VARCHAR"/>
+        <result property="payment" column="payment" jdbcType="VARCHAR"/>
+        <result property="picPath" column="pic_path" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="VARCHAR"/>
+        <result property="sellerRate" column="seller_rate" jdbcType="VARCHAR"/>
+        <result property="sellerType" column="seller_type" jdbcType="VARCHAR"/>
+        <result property="shippingType" column="shipping_type" jdbcType="VARCHAR"/>
+        <result property="skuId" column="sku_id" jdbcType="VARCHAR"/>
+        <result property="skuPropertiesName" column="sku_properties_name" jdbcType="VARCHAR"/>
+        <result property="snapshotUrl" column="snapshot_url" jdbcType="VARCHAR"/>
+        <result property="storeCode" column="store_code" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="totalFee" column="total_fee" jdbcType="VARCHAR"/>
+        <result property="itemMealName" column="item_meal_name" jdbcType="VARCHAR"/>
+        <result property="sellerNick" column="seller_nick" jdbcType="VARCHAR"/>
+        <result property="buyerNick" column="buyer_nick" jdbcType="VARCHAR"/>
+        <result property="snapshot" column="snapshot" jdbcType="VARCHAR"/>
+        <result property="timeoutActionTime" column="timeout_action_time" jdbcType="TIMESTAMP"/>
+        <result property="subOrderTaxFee" column="sub_order_tax_fee" jdbcType="VARCHAR"/>
+        <result property="subOrderTaxRate" column="sub_order_tax_rate" jdbcType="VARCHAR"/>
+        <result property="estimateConTime" column="estimate_con_time" jdbcType="VARCHAR"/>
+        <result property="o2oGuideId" column="o2o_guide_id" jdbcType="VARCHAR"/>
+        <result property="o2oGuideName" column="o2o_guide_name" jdbcType="VARCHAR"/>
+        <result property="o2oShopId" column="o2o_shop_id" jdbcType="VARCHAR"/>
+        <result property="o2oShopName" column="o2o_shop_name" jdbcType="VARCHAR"/>
+        <result property="bizCode" column="biz_code" jdbcType="VARCHAR"/>
+        <result property="cloudStore" column="cloud_store" jdbcType="VARCHAR"/>
+        <result property="hjSettleNoCommission" column="hj_settle_no_commission" jdbcType="VARCHAR"/>
+        <result property="orderTaking" column="order_taking" jdbcType="VARCHAR"/>
+        <result property="cloudStoreToken" column="cloud_store_token" jdbcType="VARCHAR"/>
+        <result property="cloudStoreBindPos" column="cloud_store_bind_pos" jdbcType="VARCHAR"/>
+        <result property="osActivityId" column="os_activity_id" jdbcType="VARCHAR"/>
+        <result property="osFgItemId" column="os_fg_item_id" jdbcType="VARCHAR"/>
+        <result property="osGiftCount" column="os_gift_count" jdbcType="VARCHAR"/>
+        <result property="osSortNum" column="os_sort_num" jdbcType="VARCHAR"/>
+        <result property="itemOid" column="item_oid" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="iid" column="iid" jdbcType="VARCHAR"/>
+        <result property="serviceId" column="service_id" jdbcType="INTEGER"/>
+        <result property="itemMealId" column="item_meal_id" jdbcType="INTEGER"/>
+        <result property="outerSkuId" column="outer_sku_id" jdbcType="VARCHAR"/>
+        <result property="serviceDetailUrl" column="service_detail_url" jdbcType="VARCHAR"/>
+        <result property="modified" column="modified" jdbcType="TIMESTAMP"/>
+        <result property="refundId" column="refund_id" jdbcType="VARCHAR"/>
+        <result property="isServiceOrder" column="is_service_order" jdbcType="VARCHAR"/>
+        <result property="orderAttr" column="order_attr" jdbcType="VARCHAR"/>
+        <result property="bindOid" column="bind_oid" jdbcType="INTEGER"/>
+        <result property="partMjzDiscount" column="part_mjz_discount" jdbcType="VARCHAR"/>
+        <result property="ticketOuterId" column="ticket_outer_id" jdbcType="VARCHAR"/>
+        <result property="ticketExpdateKey" column="ticket_expdate_key" jdbcType="VARCHAR"/>
+        <result property="isWww" column="is_www" jdbcType="VARCHAR"/>
+        <result property="tmserSpuCode" column="tmser_spu_code" jdbcType="VARCHAR"/>
+        <result property="bindOids" column="bind_oids" jdbcType="VARCHAR"/>
+        <result property="zhengjiStatus" column="zhengji_status" jdbcType="VARCHAR"/>
+        <result property="mdQualification" column="md_qualification" jdbcType="VARCHAR"/>
+        <result property="mdFee" column="md_fee" jdbcType="VARCHAR"/>
+        <result property="customization" column="customization" jdbcType="VARCHAR"/>
+        <result property="invType" column="inv_type" jdbcType="VARCHAR"/>
+        <result property="xxx" column="xxx" jdbcType="VARCHAR"/>
+        <result property="isShShip" column="is_sh_ship" jdbcType="VARCHAR"/>
+        <result property="shipper" column="shipper" jdbcType="VARCHAR"/>
+        <result property="fType" column="f_type" jdbcType="VARCHAR"/>
+        <result property="fStatus" column="f_status" jdbcType="VARCHAR"/>
+        <result property="fTerm" column="f_term" jdbcType="VARCHAR"/>
+        <result property="o2oEtOrderId" column="o2o_et_order_id" jdbcType="VARCHAR"/>
+        <result property="comboId" column="combo_id" jdbcType="VARCHAR"/>
+        <result property="assemblyRela" column="assembly_rela" jdbcType="VARCHAR"/>
+        <result property="assemblyPrice" column="assembly_price" jdbcType="VARCHAR"/>
+        <result property="assemblyItem" column="assembly_item" jdbcType="VARCHAR"/>
+        <result property="subOrderTaxPromotionFee" column="sub_order_tax_promotion_fee" jdbcType="VARCHAR"/>
+        <result property="clDownPayment" column="cl_down_payment" jdbcType="VARCHAR"/>
+        <result property="clDownPaymentRatio" column="cl_down_payment_ratio" jdbcType="VARCHAR"/>
+        <result property="clMonthPayment" column="cl_month_payment" jdbcType="VARCHAR"/>
+        <result property="clTailPayment" column="cl_tail_payment" jdbcType="VARCHAR"/>
+        <result property="clInstallmentNum" column="cl_installment_num" jdbcType="VARCHAR"/>
+        <result property="calPenalty" column="cal_penalty" jdbcType="VARCHAR"/>
+        <result property="clServiceFee" column="cl_service_fee" jdbcType="VARCHAR"/>
+        <result property="clCarTaker" column="cl_car_taker" jdbcType="VARCHAR"/>
+        <result property="clCarTakerPhone" column="cl_car_taker_phone" jdbcType="VARCHAR"/>
+        <result property="clCarTakerIDNum" column="cl_car_taker_i_d_num" jdbcType="VARCHAR"/>
+        <result property="clCarTakerIdNum" column="cl_car_taker_id_num" jdbcType="VARCHAR"/>
+        <result property="downPayment" column="down_payment" jdbcType="VARCHAR"/>
+        <result property="downPaymentRatio" column="down_payment_ratio" jdbcType="VARCHAR"/>
+        <result property="monthPayment" column="month_payment" jdbcType="VARCHAR"/>
+        <result property="tailPayment" column="tail_payment" jdbcType="VARCHAR"/>
+        <result property="installmentNum" column="installment_num" jdbcType="VARCHAR"/>
+        <result property="penalty" column="penalty" jdbcType="VARCHAR"/>
+        <result property="serviceFee" column="service_fee" jdbcType="VARCHAR"/>
+        <result property="carTaker" column="car_taker" jdbcType="VARCHAR"/>
+        <result property="carTakerPhone" column="car_taker_phone" jdbcType="VARCHAR"/>
+        <result property="carTakerIdNum" column="car_taker_id_num" jdbcType="VARCHAR"/>
+        <result property="carStoreCode" column="car_store_code" jdbcType="VARCHAR"/>
+        <result property="carStoreName" column="car_store_name" jdbcType="VARCHAR"/>
+        <result property="outUniqueId" column="out_unique_id" jdbcType="VARCHAR"/>
+        <result property="wsBankApplyNo" column="ws_bank_apply_no" jdbcType="VARCHAR"/>
+        <result property="carTakerId" column="car_taker_id" jdbcType="VARCHAR"/>
+        <result property="oidStr" column="oid_str" jdbcType="VARCHAR"/>
+        <result property="fqgNum" column="fqg_num" jdbcType="INTEGER"/>
+        <result property="isFqgSFee" column="is_fqg_s_fee" jdbcType="VARCHAR"/>
+        <result property="taxFree" column="tax_free" jdbcType="VARCHAR"/>
+        <result property="taxCouponDiscount" column="tax_coupon_discount" jdbcType="VARCHAR"/>
+        <result property="rechargeFee" column="recharge_fee" jdbcType="VARCHAR"/>
+        <result property="platformSubsidyFee" column="platform_subsidy_fee" jdbcType="VARCHAR"/>
+        <result property="nrReduceInvFail" column="nr_reduce_inv_fail" jdbcType="VARCHAR"/>
+        <result property="nrOuterIid" column="nr_outer_iid" jdbcType="VARCHAR"/>
+        <result property="bindOidsAllStatus" column="bind_oids_all_status" jdbcType="VARCHAR"/>
+        <result property="sortInfo" column="sort_info" jdbcType="VARCHAR"/>
+        <result property="retailStoreId" column="retail_store_id" jdbcType="VARCHAR"/>
+        <result property="outItemId" column="out_item_id" jdbcType="VARCHAR"/>
+        <result property="rtOmniOuterScId" column="rt_omni_outer_sc_id" jdbcType="VARCHAR"/>
+        <result property="rtOmniScId" column="rt_omni_sc_id" jdbcType="VARCHAR"/>
+        <result property="modifyAddress" column="modify_address" jdbcType="VARCHAR"/>
+        <result property="tiModifyAddressTime" column="ti_modify_address_time" jdbcType="VARCHAR"/>
+        <result property="creditBuy" column="credit_buy" jdbcType="VARCHAR"/>
+        <result property="sTariffFee" column="s_tariff_fee" jdbcType="VARCHAR"/>
+        <result property="timingPromise" column="timing_promise" jdbcType="VARCHAR"/>
+        <result property="promiseService" column="promise_service" jdbcType="VARCHAR"/>
+        <result property="esDate" column="es_date" jdbcType="VARCHAR"/>
+        <result property="esRange" column="es_range" jdbcType="VARCHAR"/>
+        <result property="osDate" column="os_date" jdbcType="VARCHAR"/>
+        <result property="osRange" column="os_range" jdbcType="VARCHAR"/>
+        <result property="cutoffMinutes" column="cutoff_minutes" jdbcType="VARCHAR"/>
+        <result property="esTime" column="es_time" jdbcType="VARCHAR"/>
+        <result property="deliveryTime" column="delivery_time" jdbcType="VARCHAR"/>
+        <result property="collectTime" column="collect_time" jdbcType="VARCHAR"/>
+        <result property="dispatchTime" column="dispatch_time" jdbcType="VARCHAR"/>
+        <result property="signTime" column="sign_time" jdbcType="VARCHAR"/>
+        <result property="promiseEndTime" column="promise_end_time" jdbcType="VARCHAR"/>
+        <result property="omniJxsOuterid" column="omni_jxs_outerid" jdbcType="VARCHAR"/>
+        <result property="propoint" column="propoint" jdbcType="VARCHAR"/>
+        <result property="isKaola" column="is_kaola" jdbcType="VARCHAR"/>
+        <result property="brandLightShopSource" column="brand_light_shop_source" jdbcType="VARCHAR"/>
+        <result property="brandLightShopStoreId" column="brand_light_shop_store_id" jdbcType="VARCHAR"/>
+        <result property="specialRefundType" column="special_refund_type" jdbcType="VARCHAR"/>
+        <result property="extendInfo" column="extend_info" jdbcType="VARCHAR"/>
+        <result property="isDevalueFee" column="is_devalue_fee" jdbcType="VARCHAR"/>
+        <result property="serviceOrderType" column="service_order_type" jdbcType="VARCHAR"/>
+        <result property="serviceOuterId" column="service_outer_id" jdbcType="VARCHAR"/>
+        <result property="expandCardExpandPriceUsedSuborder" column="expand_card_expand_price_used_suborder" jdbcType="VARCHAR"/>
+        <result property="expandCardBasicPriceUsedSuborder" column="expand_card_basic_price_used_suborder" jdbcType="VARCHAR"/>
+        <result property="timeStamp" column="time_stamp" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="ext1" column="ext1" jdbcType="VARCHAR"/>
+        <result property="ext2" column="ext2" jdbcType="VARCHAR"/>
+        <result property="ext3" column="ext3" jdbcType="VARCHAR"/>
+        <result property="ext4" column="ext4" jdbcType="VARCHAR"/>
+        <result property="ext5" column="ext5" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <!--查询单个-->
+    <select id="queryById" resultMap="DPlTmOrderOrdersDMap">
+        SELECT id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_orders_d
+         WHERE id = #{id}
+    </select>
+    
+    <!--通过主键查询-->
+    <select id="queryByPk" resultMap="DPlTmOrderOrdersDMap">
+        SELECT id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_orders_d
+         WHERE     tid = #{tid}
+           AND     oid = #{oid}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DPlTmOrderOrdersDMap">
+        SELECT id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_orders_d
+         LIMIT #{offset}, #{limit}
+    </select>
+    
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="DPlTmOrderOrdersDMap">
+        SELECT id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5
+          FROM dst_111yao_doms.d_pl_tm_order_orders_d
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="tid != null">
+                AND tid = #{tid}
+            </if>
+            <if test="olshopid != null and olshopid != ''">
+                AND olshopid = #{olshopid}
+            </if>
+            <if test="oid != null and oid != ''">
+                AND oid = #{oid}
+            </if>
+            <if test="adjustFee != null and adjustFee != ''">
+                AND adjust_fee = #{adjustFee}
+            </if>
+            <if test="buyerRate != null and buyerRate != ''">
+                AND buyer_rate = #{buyerRate}
+            </if>
+            <if test="cid != null">
+                AND cid = #{cid}
+            </if>
+            <if test="status != null and status != ''">
+                AND status = #{status}
+            </if>
+            <if test="refundStatus != null and refundStatus != ''">
+                AND refund_status = #{refundStatus}
+            </if>
+            <if test="consignTime != null and consignTime != ''">
+                AND consign_time = #{consignTime}
+            </if>
+            <if test="discountFee != null and discountFee != ''">
+                AND discount_fee = #{discountFee}
+            </if>
+            <if test="divideOrderFee != null and divideOrderFee != ''">
+                AND divide_order_fee = #{divideOrderFee}
+            </if>
+            <if test="endTime != null">
+                AND end_time = #{endTime}
+            </if>
+            <if test="invoiceNo != null and invoiceNo != ''">
+                AND invoice_no = #{invoiceNo}
+            </if>
+            <if test="isDaixiao != null and isDaixiao != ''">
+                AND is_daixiao = #{isDaixiao}
+            </if>
+            <if test="isOversold != null and isOversold != ''">
+                AND is_oversold = #{isOversold}
+            </if>
+            <if test="logisticsCompany != null and logisticsCompany != ''">
+                AND logistics_company = #{logisticsCompany}
+            </if>
+            <if test="num != null">
+                AND num = #{num}
+            </if>
+            <if test="numIid != null">
+                AND num_iid = #{numIid}
+            </if>
+            <if test="orderFrom != null and orderFrom != ''">
+                AND order_from = #{orderFrom}
+            </if>
+            <if test="outerIid != null and outerIid != ''">
+                AND outer_iid = #{outerIid}
+            </if>
+            <if test="payment != null and payment != ''">
+                AND payment = #{payment}
+            </if>
+            <if test="picPath != null and picPath != ''">
+                AND pic_path = #{picPath}
+            </if>
+            <if test="price != null and price != ''">
+                AND price = #{price}
+            </if>
+            <if test="sellerRate != null and sellerRate != ''">
+                AND seller_rate = #{sellerRate}
+            </if>
+            <if test="sellerType != null and sellerType != ''">
+                AND seller_type = #{sellerType}
+            </if>
+            <if test="shippingType != null and shippingType != ''">
+                AND shipping_type = #{shippingType}
+            </if>
+            <if test="skuId != null and skuId != ''">
+                AND sku_id = #{skuId}
+            </if>
+            <if test="skuPropertiesName != null and skuPropertiesName != ''">
+                AND sku_properties_name = #{skuPropertiesName}
+            </if>
+            <if test="snapshotUrl != null and snapshotUrl != ''">
+                AND snapshot_url = #{snapshotUrl}
+            </if>
+            <if test="storeCode != null and storeCode != ''">
+                AND store_code = #{storeCode}
+            </if>
+            <if test="title != null and title != ''">
+                AND title = #{title}
+            </if>
+            <if test="totalFee != null and totalFee != ''">
+                AND total_fee = #{totalFee}
+            </if>
+            <if test="itemMealName != null and itemMealName != ''">
+                AND item_meal_name = #{itemMealName}
+            </if>
+            <if test="sellerNick != null and sellerNick != ''">
+                AND seller_nick = #{sellerNick}
+            </if>
+            <if test="buyerNick != null and buyerNick != ''">
+                AND buyer_nick = #{buyerNick}
+            </if>
+            <if test="snapshot != null and snapshot != ''">
+                AND snapshot = #{snapshot}
+            </if>
+            <if test="timeoutActionTime != null">
+                AND timeout_action_time = #{timeoutActionTime}
+            </if>
+            <if test="subOrderTaxFee != null and subOrderTaxFee != ''">
+                AND sub_order_tax_fee = #{subOrderTaxFee}
+            </if>
+            <if test="subOrderTaxRate != null and subOrderTaxRate != ''">
+                AND sub_order_tax_rate = #{subOrderTaxRate}
+            </if>
+            <if test="estimateConTime != null and estimateConTime != ''">
+                AND estimate_con_time = #{estimateConTime}
+            </if>
+            <if test="o2oGuideId != null and o2oGuideId != ''">
+                AND o2o_guide_id = #{o2oGuideId}
+            </if>
+            <if test="o2oGuideName != null and o2oGuideName != ''">
+                AND o2o_guide_name = #{o2oGuideName}
+            </if>
+            <if test="o2oShopId != null and o2oShopId != ''">
+                AND o2o_shop_id = #{o2oShopId}
+            </if>
+            <if test="o2oShopName != null and o2oShopName != ''">
+                AND o2o_shop_name = #{o2oShopName}
+            </if>
+            <if test="bizCode != null and bizCode != ''">
+                AND biz_code = #{bizCode}
+            </if>
+            <if test="cloudStore != null and cloudStore != ''">
+                AND cloud_store = #{cloudStore}
+            </if>
+            <if test="hjSettleNoCommission != null and hjSettleNoCommission != ''">
+                AND hj_settle_no_commission = #{hjSettleNoCommission}
+            </if>
+            <if test="orderTaking != null and orderTaking != ''">
+                AND order_taking = #{orderTaking}
+            </if>
+            <if test="cloudStoreToken != null and cloudStoreToken != ''">
+                AND cloud_store_token = #{cloudStoreToken}
+            </if>
+            <if test="cloudStoreBindPos != null and cloudStoreBindPos != ''">
+                AND cloud_store_bind_pos = #{cloudStoreBindPos}
+            </if>
+            <if test="osActivityId != null and osActivityId != ''">
+                AND os_activity_id = #{osActivityId}
+            </if>
+            <if test="osFgItemId != null and osFgItemId != ''">
+                AND os_fg_item_id = #{osFgItemId}
+            </if>
+            <if test="osGiftCount != null and osGiftCount != ''">
+                AND os_gift_count = #{osGiftCount}
+            </if>
+            <if test="osSortNum != null and osSortNum != ''">
+                AND os_sort_num = #{osSortNum}
+            </if>
+            <if test="itemOid != null">
+                AND item_oid = #{itemOid}
+            </if>
+            <if test="type != null and type != ''">
+                AND type = #{type}
+            </if>
+            <if test="iid != null and iid != ''">
+                AND iid = #{iid}
+            </if>
+            <if test="serviceId != null">
+                AND service_id = #{serviceId}
+            </if>
+            <if test="itemMealId != null">
+                AND item_meal_id = #{itemMealId}
+            </if>
+            <if test="outerSkuId != null and outerSkuId != ''">
+                AND outer_sku_id = #{outerSkuId}
+            </if>
+            <if test="serviceDetailUrl != null and serviceDetailUrl != ''">
+                AND service_detail_url = #{serviceDetailUrl}
+            </if>
+            <if test="modified != null">
+                AND modified = #{modified}
+            </if>
+            <if test="refundId != null and refundId != ''">
+                AND refund_id = #{refundId}
+            </if>
+            <if test="isServiceOrder != null and isServiceOrder != ''">
+                AND is_service_order = #{isServiceOrder}
+            </if>
+            <if test="orderAttr != null and orderAttr != ''">
+                AND order_attr = #{orderAttr}
+            </if>
+            <if test="bindOid != null">
+                AND bind_oid = #{bindOid}
+            </if>
+            <if test="partMjzDiscount != null and partMjzDiscount != ''">
+                AND part_mjz_discount = #{partMjzDiscount}
+            </if>
+            <if test="ticketOuterId != null and ticketOuterId != ''">
+                AND ticket_outer_id = #{ticketOuterId}
+            </if>
+            <if test="ticketExpdateKey != null and ticketExpdateKey != ''">
+                AND ticket_expdate_key = #{ticketExpdateKey}
+            </if>
+            <if test="isWww != null and isWww != ''">
+                AND is_www = #{isWww}
+            </if>
+            <if test="tmserSpuCode != null and tmserSpuCode != ''">
+                AND tmser_spu_code = #{tmserSpuCode}
+            </if>
+            <if test="bindOids != null and bindOids != ''">
+                AND bind_oids = #{bindOids}
+            </if>
+            <if test="zhengjiStatus != null and zhengjiStatus != ''">
+                AND zhengji_status = #{zhengjiStatus}
+            </if>
+            <if test="mdQualification != null and mdQualification != ''">
+                AND md_qualification = #{mdQualification}
+            </if>
+            <if test="mdFee != null and mdFee != ''">
+                AND md_fee = #{mdFee}
+            </if>
+            <if test="customization != null and customization != ''">
+                AND customization = #{customization}
+            </if>
+            <if test="invType != null and invType != ''">
+                AND inv_type = #{invType}
+            </if>
+            <if test="xxx != null and xxx != ''">
+                AND xxx = #{xxx}
+            </if>
+            <if test="isShShip != null and isShShip != ''">
+                AND is_sh_ship = #{isShShip}
+            </if>
+            <if test="shipper != null and shipper != ''">
+                AND shipper = #{shipper}
+            </if>
+            <if test="fType != null and fType != ''">
+                AND f_type = #{fType}
+            </if>
+            <if test="fStatus != null and fStatus != ''">
+                AND f_status = #{fStatus}
+            </if>
+            <if test="fTerm != null and fTerm != ''">
+                AND f_term = #{fTerm}
+            </if>
+            <if test="o2oEtOrderId != null and o2oEtOrderId != ''">
+                AND o2o_et_order_id = #{o2oEtOrderId}
+            </if>
+            <if test="comboId != null and comboId != ''">
+                AND combo_id = #{comboId}
+            </if>
+            <if test="assemblyRela != null and assemblyRela != ''">
+                AND assembly_rela = #{assemblyRela}
+            </if>
+            <if test="assemblyPrice != null and assemblyPrice != ''">
+                AND assembly_price = #{assemblyPrice}
+            </if>
+            <if test="assemblyItem != null and assemblyItem != ''">
+                AND assembly_item = #{assemblyItem}
+            </if>
+            <if test="subOrderTaxPromotionFee != null and subOrderTaxPromotionFee != ''">
+                AND sub_order_tax_promotion_fee = #{subOrderTaxPromotionFee}
+            </if>
+            <if test="clDownPayment != null and clDownPayment != ''">
+                AND cl_down_payment = #{clDownPayment}
+            </if>
+            <if test="clDownPaymentRatio != null and clDownPaymentRatio != ''">
+                AND cl_down_payment_ratio = #{clDownPaymentRatio}
+            </if>
+            <if test="clMonthPayment != null and clMonthPayment != ''">
+                AND cl_month_payment = #{clMonthPayment}
+            </if>
+            <if test="clTailPayment != null and clTailPayment != ''">
+                AND cl_tail_payment = #{clTailPayment}
+            </if>
+            <if test="clInstallmentNum != null and clInstallmentNum != ''">
+                AND cl_installment_num = #{clInstallmentNum}
+            </if>
+            <if test="calPenalty != null and calPenalty != ''">
+                AND cal_penalty = #{calPenalty}
+            </if>
+            <if test="clServiceFee != null and clServiceFee != ''">
+                AND cl_service_fee = #{clServiceFee}
+            </if>
+            <if test="clCarTaker != null and clCarTaker != ''">
+                AND cl_car_taker = #{clCarTaker}
+            </if>
+            <if test="clCarTakerPhone != null and clCarTakerPhone != ''">
+                AND cl_car_taker_phone = #{clCarTakerPhone}
+            </if>
+            <if test="clCarTakerIDNum != null and clCarTakerIDNum != ''">
+                AND cl_car_taker_i_d_num = #{clCarTakerIDNum}
+            </if>
+            <if test="clCarTakerIdNum != null and clCarTakerIdNum != ''">
+                AND cl_car_taker_id_num = #{clCarTakerIdNum}
+            </if>
+            <if test="downPayment != null and downPayment != ''">
+                AND down_payment = #{downPayment}
+            </if>
+            <if test="downPaymentRatio != null and downPaymentRatio != ''">
+                AND down_payment_ratio = #{downPaymentRatio}
+            </if>
+            <if test="monthPayment != null and monthPayment != ''">
+                AND month_payment = #{monthPayment}
+            </if>
+            <if test="tailPayment != null and tailPayment != ''">
+                AND tail_payment = #{tailPayment}
+            </if>
+            <if test="installmentNum != null and installmentNum != ''">
+                AND installment_num = #{installmentNum}
+            </if>
+            <if test="penalty != null and penalty != ''">
+                AND penalty = #{penalty}
+            </if>
+            <if test="serviceFee != null and serviceFee != ''">
+                AND service_fee = #{serviceFee}
+            </if>
+            <if test="carTaker != null and carTaker != ''">
+                AND car_taker = #{carTaker}
+            </if>
+            <if test="carTakerPhone != null and carTakerPhone != ''">
+                AND car_taker_phone = #{carTakerPhone}
+            </if>
+            <if test="carTakerIdNum != null and carTakerIdNum != ''">
+                AND car_taker_id_num = #{carTakerIdNum}
+            </if>
+            <if test="carStoreCode != null and carStoreCode != ''">
+                AND car_store_code = #{carStoreCode}
+            </if>
+            <if test="carStoreName != null and carStoreName != ''">
+                AND car_store_name = #{carStoreName}
+            </if>
+            <if test="outUniqueId != null and outUniqueId != ''">
+                AND out_unique_id = #{outUniqueId}
+            </if>
+            <if test="wsBankApplyNo != null and wsBankApplyNo != ''">
+                AND ws_bank_apply_no = #{wsBankApplyNo}
+            </if>
+            <if test="carTakerId != null and carTakerId != ''">
+                AND car_taker_id = #{carTakerId}
+            </if>
+            <if test="oidStr != null and oidStr != ''">
+                AND oid_str = #{oidStr}
+            </if>
+            <if test="fqgNum != null">
+                AND fqg_num = #{fqgNum}
+            </if>
+            <if test="isFqgSFee != null and isFqgSFee != ''">
+                AND is_fqg_s_fee = #{isFqgSFee}
+            </if>
+            <if test="taxFree != null and taxFree != ''">
+                AND tax_free = #{taxFree}
+            </if>
+            <if test="taxCouponDiscount != null and taxCouponDiscount != ''">
+                AND tax_coupon_discount = #{taxCouponDiscount}
+            </if>
+            <if test="rechargeFee != null and rechargeFee != ''">
+                AND recharge_fee = #{rechargeFee}
+            </if>
+            <if test="platformSubsidyFee != null and platformSubsidyFee != ''">
+                AND platform_subsidy_fee = #{platformSubsidyFee}
+            </if>
+            <if test="nrReduceInvFail != null and nrReduceInvFail != ''">
+                AND nr_reduce_inv_fail = #{nrReduceInvFail}
+            </if>
+            <if test="nrOuterIid != null and nrOuterIid != ''">
+                AND nr_outer_iid = #{nrOuterIid}
+            </if>
+            <if test="bindOidsAllStatus != null and bindOidsAllStatus != ''">
+                AND bind_oids_all_status = #{bindOidsAllStatus}
+            </if>
+            <if test="sortInfo != null and sortInfo != ''">
+                AND sort_info = #{sortInfo}
+            </if>
+            <if test="retailStoreId != null and retailStoreId != ''">
+                AND retail_store_id = #{retailStoreId}
+            </if>
+            <if test="outItemId != null and outItemId != ''">
+                AND out_item_id = #{outItemId}
+            </if>
+            <if test="rtOmniOuterScId != null and rtOmniOuterScId != ''">
+                AND rt_omni_outer_sc_id = #{rtOmniOuterScId}
+            </if>
+            <if test="rtOmniScId != null and rtOmniScId != ''">
+                AND rt_omni_sc_id = #{rtOmniScId}
+            </if>
+            <if test="modifyAddress != null and modifyAddress != ''">
+                AND modify_address = #{modifyAddress}
+            </if>
+            <if test="tiModifyAddressTime != null and tiModifyAddressTime != ''">
+                AND ti_modify_address_time = #{tiModifyAddressTime}
+            </if>
+            <if test="creditBuy != null and creditBuy != ''">
+                AND credit_buy = #{creditBuy}
+            </if>
+            <if test="sTariffFee != null and sTariffFee != ''">
+                AND s_tariff_fee = #{sTariffFee}
+            </if>
+            <if test="timingPromise != null and timingPromise != ''">
+                AND timing_promise = #{timingPromise}
+            </if>
+            <if test="promiseService != null and promiseService != ''">
+                AND promise_service = #{promiseService}
+            </if>
+            <if test="esDate != null and esDate != ''">
+                AND es_date = #{esDate}
+            </if>
+            <if test="esRange != null and esRange != ''">
+                AND es_range = #{esRange}
+            </if>
+            <if test="osDate != null and osDate != ''">
+                AND os_date = #{osDate}
+            </if>
+            <if test="osRange != null and osRange != ''">
+                AND os_range = #{osRange}
+            </if>
+            <if test="cutoffMinutes != null and cutoffMinutes != ''">
+                AND cutoff_minutes = #{cutoffMinutes}
+            </if>
+            <if test="esTime != null and esTime != ''">
+                AND es_time = #{esTime}
+            </if>
+            <if test="deliveryTime != null and deliveryTime != ''">
+                AND delivery_time = #{deliveryTime}
+            </if>
+            <if test="collectTime != null and collectTime != ''">
+                AND collect_time = #{collectTime}
+            </if>
+            <if test="dispatchTime != null and dispatchTime != ''">
+                AND dispatch_time = #{dispatchTime}
+            </if>
+            <if test="signTime != null and signTime != ''">
+                AND sign_time = #{signTime}
+            </if>
+            <if test="promiseEndTime != null and promiseEndTime != ''">
+                AND promise_end_time = #{promiseEndTime}
+            </if>
+            <if test="omniJxsOuterid != null and omniJxsOuterid != ''">
+                AND omni_jxs_outerid = #{omniJxsOuterid}
+            </if>
+            <if test="propoint != null and propoint != ''">
+                AND propoint = #{propoint}
+            </if>
+            <if test="isKaola != null and isKaola != ''">
+                AND is_kaola = #{isKaola}
+            </if>
+            <if test="brandLightShopSource != null and brandLightShopSource != ''">
+                AND brand_light_shop_source = #{brandLightShopSource}
+            </if>
+            <if test="brandLightShopStoreId != null and brandLightShopStoreId != ''">
+                AND brand_light_shop_store_id = #{brandLightShopStoreId}
+            </if>
+            <if test="specialRefundType != null and specialRefundType != ''">
+                AND special_refund_type = #{specialRefundType}
+            </if>
+            <if test="extendInfo != null and extendInfo != ''">
+                AND extend_info = #{extendInfo}
+            </if>
+            <if test="isDevalueFee != null and isDevalueFee != ''">
+                AND is_devalue_fee = #{isDevalueFee}
+            </if>
+            <if test="serviceOrderType != null and serviceOrderType != ''">
+                AND service_order_type = #{serviceOrderType}
+            </if>
+            <if test="serviceOuterId != null and serviceOuterId != ''">
+                AND service_outer_id = #{serviceOuterId}
+            </if>
+            <if test="expandCardExpandPriceUsedSuborder != null and expandCardExpandPriceUsedSuborder != ''">
+                AND expand_card_expand_price_used_suborder = #{expandCardExpandPriceUsedSuborder}
+            </if>
+            <if test="expandCardBasicPriceUsedSuborder != null and expandCardBasicPriceUsedSuborder != ''">
+                AND expand_card_basic_price_used_suborder = #{expandCardBasicPriceUsedSuborder}
+            </if>
+            <if test="timeStamp != null">
+                AND time_stamp = #{timeStamp}
+            </if>
+            <if test="createTime != null">
+                AND create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                AND update_time = #{updateTime}
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                AND ext1 = #{ext1}
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                AND ext2 = #{ext2}
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                AND ext3 = #{ext3}
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                AND ext4 = #{ext4}
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                AND ext5 = #{ext5}
+            </if>
+        </where>
+    </select>
+    
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="tid" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_tm_order_orders_d(id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES (#{id}, #{tid}, #{olshopid}, #{oid}, #{adjustFee}, #{buyerRate}, #{cid}, #{status}, #{refundStatus}, #{consignTime}, #{discountFee}, #{divideOrderFee}, #{endTime}, #{invoiceNo}, #{isDaixiao}, #{isOversold}, #{logisticsCompany}, #{num}, #{numIid}, #{orderFrom}, #{outerIid}, #{payment}, #{picPath}, #{price}, #{sellerRate}, #{sellerType}, #{shippingType}, #{skuId}, #{skuPropertiesName}, #{snapshotUrl}, #{storeCode}, #{title}, #{totalFee}, #{itemMealName}, #{sellerNick}, #{buyerNick}, #{snapshot}, #{timeoutActionTime}, #{subOrderTaxFee}, #{subOrderTaxRate}, #{estimateConTime}, #{o2oGuideId}, #{o2oGuideName}, #{o2oShopId}, #{o2oShopName}, #{bizCode}, #{cloudStore}, #{hjSettleNoCommission}, #{orderTaking}, #{cloudStoreToken}, #{cloudStoreBindPos}, #{osActivityId}, #{osFgItemId}, #{osGiftCount}, #{osSortNum}, #{itemOid}, #{type}, #{iid}, #{serviceId}, #{itemMealId}, #{outerSkuId}, #{serviceDetailUrl}, #{modified}, #{refundId}, #{isServiceOrder}, #{orderAttr}, #{bindOid}, #{partMjzDiscount}, #{ticketOuterId}, #{ticketExpdateKey}, #{isWww}, #{tmserSpuCode}, #{bindOids}, #{zhengjiStatus}, #{mdQualification}, #{mdFee}, #{customization}, #{invType}, #{xxx}, #{isShShip}, #{shipper}, #{fType}, #{fStatus}, #{fTerm}, #{o2oEtOrderId}, #{comboId}, #{assemblyRela}, #{assemblyPrice}, #{assemblyItem}, #{subOrderTaxPromotionFee}, #{clDownPayment}, #{clDownPaymentRatio}, #{clMonthPayment}, #{clTailPayment}, #{clInstallmentNum}, #{calPenalty}, #{clServiceFee}, #{clCarTaker}, #{clCarTakerPhone}, #{clCarTakerIDNum}, #{clCarTakerIdNum}, #{downPayment}, #{downPaymentRatio}, #{monthPayment}, #{tailPayment}, #{installmentNum}, #{penalty}, #{serviceFee}, #{carTaker}, #{carTakerPhone}, #{carTakerIdNum}, #{carStoreCode}, #{carStoreName}, #{outUniqueId}, #{wsBankApplyNo}, #{carTakerId}, #{oidStr}, #{fqgNum}, #{isFqgSFee}, #{taxFree}, #{taxCouponDiscount}, #{rechargeFee}, #{platformSubsidyFee}, #{nrReduceInvFail}, #{nrOuterIid}, #{bindOidsAllStatus}, #{sortInfo}, #{retailStoreId}, #{outItemId}, #{rtOmniOuterScId}, #{rtOmniScId}, #{modifyAddress}, #{tiModifyAddressTime}, #{creditBuy}, #{sTariffFee}, #{timingPromise}, #{promiseService}, #{esDate}, #{esRange}, #{osDate}, #{osRange}, #{cutoffMinutes}, #{esTime}, #{deliveryTime}, #{collectTime}, #{dispatchTime}, #{signTime}, #{promiseEndTime}, #{omniJxsOuterid}, #{propoint}, #{isKaola}, #{brandLightShopSource}, #{brandLightShopStoreId}, #{specialRefundType}, #{extendInfo}, #{isDevalueFee}, #{serviceOrderType}, #{serviceOuterId}, #{expandCardExpandPriceUsedSuborder}, #{expandCardBasicPriceUsedSuborder}, #{timeStamp}, #{createTime}, #{updateTime}, #{ext1}, #{ext2}, #{ext3}, #{ext4}, #{ext5})
+    </insert>
+    
+    <insert id="insertBatch" keyProperty="tid" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_tm_order_orders_d(id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.tid}, #{entity.olshopid}, #{entity.oid}, #{entity.adjustFee}, #{entity.buyerRate}, #{entity.cid}, #{entity.status}, #{entity.refundStatus}, #{entity.consignTime}, #{entity.discountFee}, #{entity.divideOrderFee}, #{entity.endTime}, #{entity.invoiceNo}, #{entity.isDaixiao}, #{entity.isOversold}, #{entity.logisticsCompany}, #{entity.num}, #{entity.numIid}, #{entity.orderFrom}, #{entity.outerIid}, #{entity.payment}, #{entity.picPath}, #{entity.price}, #{entity.sellerRate}, #{entity.sellerType}, #{entity.shippingType}, #{entity.skuId}, #{entity.skuPropertiesName}, #{entity.snapshotUrl}, #{entity.storeCode}, #{entity.title}, #{entity.totalFee}, #{entity.itemMealName}, #{entity.sellerNick}, #{entity.buyerNick}, #{entity.snapshot}, #{entity.timeoutActionTime}, #{entity.subOrderTaxFee}, #{entity.subOrderTaxRate}, #{entity.estimateConTime}, #{entity.o2oGuideId}, #{entity.o2oGuideName}, #{entity.o2oShopId}, #{entity.o2oShopName}, #{entity.bizCode}, #{entity.cloudStore}, #{entity.hjSettleNoCommission}, #{entity.orderTaking}, #{entity.cloudStoreToken}, #{entity.cloudStoreBindPos}, #{entity.osActivityId}, #{entity.osFgItemId}, #{entity.osGiftCount}, #{entity.osSortNum}, #{entity.itemOid}, #{entity.type}, #{entity.iid}, #{entity.serviceId}, #{entity.itemMealId}, #{entity.outerSkuId}, #{entity.serviceDetailUrl}, #{entity.modified}, #{entity.refundId}, #{entity.isServiceOrder}, #{entity.orderAttr}, #{entity.bindOid}, #{entity.partMjzDiscount}, #{entity.ticketOuterId}, #{entity.ticketExpdateKey}, #{entity.isWww}, #{entity.tmserSpuCode}, #{entity.bindOids}, #{entity.zhengjiStatus}, #{entity.mdQualification}, #{entity.mdFee}, #{entity.customization}, #{entity.invType}, #{entity.xxx}, #{entity.isShShip}, #{entity.shipper}, #{entity.fType}, #{entity.fStatus}, #{entity.fTerm}, #{entity.o2oEtOrderId}, #{entity.comboId}, #{entity.assemblyRela}, #{entity.assemblyPrice}, #{entity.assemblyItem}, #{entity.subOrderTaxPromotionFee}, #{entity.clDownPayment}, #{entity.clDownPaymentRatio}, #{entity.clMonthPayment}, #{entity.clTailPayment}, #{entity.clInstallmentNum}, #{entity.calPenalty}, #{entity.clServiceFee}, #{entity.clCarTaker}, #{entity.clCarTakerPhone}, #{entity.clCarTakerIDNum}, #{entity.clCarTakerIdNum}, #{entity.downPayment}, #{entity.downPaymentRatio}, #{entity.monthPayment}, #{entity.tailPayment}, #{entity.installmentNum}, #{entity.penalty}, #{entity.serviceFee}, #{entity.carTaker}, #{entity.carTakerPhone}, #{entity.carTakerIdNum}, #{entity.carStoreCode}, #{entity.carStoreName}, #{entity.outUniqueId}, #{entity.wsBankApplyNo}, #{entity.carTakerId}, #{entity.oidStr}, #{entity.fqgNum}, #{entity.isFqgSFee}, #{entity.taxFree}, #{entity.taxCouponDiscount}, #{entity.rechargeFee}, #{entity.platformSubsidyFee}, #{entity.nrReduceInvFail}, #{entity.nrOuterIid}, #{entity.bindOidsAllStatus}, #{entity.sortInfo}, #{entity.retailStoreId}, #{entity.outItemId}, #{entity.rtOmniOuterScId}, #{entity.rtOmniScId}, #{entity.modifyAddress}, #{entity.tiModifyAddressTime}, #{entity.creditBuy}, #{entity.sTariffFee}, #{entity.timingPromise}, #{entity.promiseService}, #{entity.esDate}, #{entity.esRange}, #{entity.osDate}, #{entity.osRange}, #{entity.cutoffMinutes}, #{entity.esTime}, #{entity.deliveryTime}, #{entity.collectTime}, #{entity.dispatchTime}, #{entity.signTime}, #{entity.promiseEndTime}, #{entity.omniJxsOuterid}, #{entity.propoint}, #{entity.isKaola}, #{entity.brandLightShopSource}, #{entity.brandLightShopStoreId}, #{entity.specialRefundType}, #{entity.extendInfo}, #{entity.isDevalueFee}, #{entity.serviceOrderType}, #{entity.serviceOuterId}, #{entity.expandCardExpandPriceUsedSuborder}, #{entity.expandCardBasicPriceUsedSuborder}, #{entity.timeStamp}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3}, #{entity.ext4}, #{entity.ext5})
+        </foreach>
+    </insert>
+    
+    <insert id="insertOrUpdateBatch" keyProperty="tid" useGeneratedKeys="true">
+        INSERT INTO dst_111yao_doms.d_pl_tm_order_orders_d(id, tid, olshopid, oid, adjust_fee, buyer_rate, cid, status, refund_status, consign_time, discount_fee, divide_order_fee, end_time, invoice_no, is_daixiao, is_oversold, logistics_company, num, num_iid, order_from, outer_iid, payment, pic_path, price, seller_rate, seller_type, shipping_type, sku_id, sku_properties_name, snapshot_url, store_code, title, total_fee, item_meal_name, seller_nick, buyer_nick, snapshot, timeout_action_time, sub_order_tax_fee, sub_order_tax_rate, estimate_con_time, o2o_guide_id, o2o_guide_name, o2o_shop_id, o2o_shop_name, biz_code, cloud_store, hj_settle_no_commission, order_taking, cloud_store_token, cloud_store_bind_pos, os_activity_id, os_fg_item_id, os_gift_count, os_sort_num, item_oid, type, iid, service_id, item_meal_id, outer_sku_id, service_detail_url, modified, refund_id, is_service_order, order_attr, bind_oid, part_mjz_discount, ticket_outer_id, ticket_expdate_key, is_www, tmser_spu_code, bind_oids, zhengji_status, md_qualification, md_fee, customization, inv_type, xxx, is_sh_ship, shipper, f_type, f_status, f_term, o2o_et_order_id, combo_id, assembly_rela, assembly_price, assembly_item, sub_order_tax_promotion_fee, cl_down_payment, cl_down_payment_ratio, cl_month_payment, cl_tail_payment, cl_installment_num, cal_penalty, cl_service_fee, cl_car_taker, cl_car_taker_phone, cl_car_taker_i_d_num, cl_car_taker_id_num, down_payment, down_payment_ratio, month_payment, tail_payment, installment_num, penalty, service_fee, car_taker, car_taker_phone, car_taker_id_num, car_store_code, car_store_name, out_unique_id, ws_bank_apply_no, car_taker_id, oid_str, fqg_num, is_fqg_s_fee, tax_free, tax_coupon_discount, recharge_fee, platform_subsidy_fee, nr_reduce_inv_fail, nr_outer_iid, bind_oids_all_status, sort_info, retail_store_id, out_item_id, rt_omni_outer_sc_id, rt_omni_sc_id, modify_address, ti_modify_address_time, credit_buy, s_tariff_fee, timing_promise, promise_service, es_date, es_range, os_date, os_range, cutoff_minutes, es_time, delivery_time, collect_time, dispatch_time, sign_time, promise_end_time, omni_jxs_outerid, propoint, is_kaola, brand_light_shop_source, brand_light_shop_store_id, special_refund_type, extend_info, is_devalue_fee, service_order_type, service_outer_id, expand_card_expand_price_used_suborder, expand_card_basic_price_used_suborder, time_stamp, create_time, update_time, ext1, ext2, ext3, ext4, ext5)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.tid}, #{entity.olshopid}, #{entity.oid}, #{entity.adjustFee}, #{entity.buyerRate}, #{entity.cid}, #{entity.status}, #{entity.refundStatus}, #{entity.consignTime}, #{entity.discountFee}, #{entity.divideOrderFee}, #{entity.endTime}, #{entity.invoiceNo}, #{entity.isDaixiao}, #{entity.isOversold}, #{entity.logisticsCompany}, #{entity.num}, #{entity.numIid}, #{entity.orderFrom}, #{entity.outerIid}, #{entity.payment}, #{entity.picPath}, #{entity.price}, #{entity.sellerRate}, #{entity.sellerType}, #{entity.shippingType}, #{entity.skuId}, #{entity.skuPropertiesName}, #{entity.snapshotUrl}, #{entity.storeCode}, #{entity.title}, #{entity.totalFee}, #{entity.itemMealName}, #{entity.sellerNick}, #{entity.buyerNick}, #{entity.snapshot}, #{entity.timeoutActionTime}, #{entity.subOrderTaxFee}, #{entity.subOrderTaxRate}, #{entity.estimateConTime}, #{entity.o2oGuideId}, #{entity.o2oGuideName}, #{entity.o2oShopId}, #{entity.o2oShopName}, #{entity.bizCode}, #{entity.cloudStore}, #{entity.hjSettleNoCommission}, #{entity.orderTaking}, #{entity.cloudStoreToken}, #{entity.cloudStoreBindPos}, #{entity.osActivityId}, #{entity.osFgItemId}, #{entity.osGiftCount}, #{entity.osSortNum}, #{entity.itemOid}, #{entity.type}, #{entity.iid}, #{entity.serviceId}, #{entity.itemMealId}, #{entity.outerSkuId}, #{entity.serviceDetailUrl}, #{entity.modified}, #{entity.refundId}, #{entity.isServiceOrder}, #{entity.orderAttr}, #{entity.bindOid}, #{entity.partMjzDiscount}, #{entity.ticketOuterId}, #{entity.ticketExpdateKey}, #{entity.isWww}, #{entity.tmserSpuCode}, #{entity.bindOids}, #{entity.zhengjiStatus}, #{entity.mdQualification}, #{entity.mdFee}, #{entity.customization}, #{entity.invType}, #{entity.xxx}, #{entity.isShShip}, #{entity.shipper}, #{entity.fType}, #{entity.fStatus}, #{entity.fTerm}, #{entity.o2oEtOrderId}, #{entity.comboId}, #{entity.assemblyRela}, #{entity.assemblyPrice}, #{entity.assemblyItem}, #{entity.subOrderTaxPromotionFee}, #{entity.clDownPayment}, #{entity.clDownPaymentRatio}, #{entity.clMonthPayment}, #{entity.clTailPayment}, #{entity.clInstallmentNum}, #{entity.calPenalty}, #{entity.clServiceFee}, #{entity.clCarTaker}, #{entity.clCarTakerPhone}, #{entity.clCarTakerIDNum}, #{entity.clCarTakerIdNum}, #{entity.downPayment}, #{entity.downPaymentRatio}, #{entity.monthPayment}, #{entity.tailPayment}, #{entity.installmentNum}, #{entity.penalty}, #{entity.serviceFee}, #{entity.carTaker}, #{entity.carTakerPhone}, #{entity.carTakerIdNum}, #{entity.carStoreCode}, #{entity.carStoreName}, #{entity.outUniqueId}, #{entity.wsBankApplyNo}, #{entity.carTakerId}, #{entity.oidStr}, #{entity.fqgNum}, #{entity.isFqgSFee}, #{entity.taxFree}, #{entity.taxCouponDiscount}, #{entity.rechargeFee}, #{entity.platformSubsidyFee}, #{entity.nrReduceInvFail}, #{entity.nrOuterIid}, #{entity.bindOidsAllStatus}, #{entity.sortInfo}, #{entity.retailStoreId}, #{entity.outItemId}, #{entity.rtOmniOuterScId}, #{entity.rtOmniScId}, #{entity.modifyAddress}, #{entity.tiModifyAddressTime}, #{entity.creditBuy}, #{entity.sTariffFee}, #{entity.timingPromise}, #{entity.promiseService}, #{entity.esDate}, #{entity.esRange}, #{entity.osDate}, #{entity.osRange}, #{entity.cutoffMinutes}, #{entity.esTime}, #{entity.deliveryTime}, #{entity.collectTime}, #{entity.dispatchTime}, #{entity.signTime}, #{entity.promiseEndTime}, #{entity.omniJxsOuterid}, #{entity.propoint}, #{entity.isKaola}, #{entity.brandLightShopSource}, #{entity.brandLightShopStoreId}, #{entity.specialRefundType}, #{entity.extendInfo}, #{entity.isDevalueFee}, #{entity.serviceOrderType}, #{entity.serviceOuterId}, #{entity.expandCardExpandPriceUsedSuborder}, #{entity.expandCardBasicPriceUsedSuborder}, #{entity.timeStamp}, #{entity.createTime}, #{entity.updateTime}, #{entity.ext1}, #{entity.ext2}, #{entity.ext3}, #{entity.ext4}, #{entity.ext5})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+            id = values(id) , tid = values(tid) , olshopid = values(olshopid) , oid = values(oid) , adjust_fee = values(adjust_fee) , buyer_rate = values(buyer_rate) , cid = values(cid) , status = values(status) , refund_status = values(refund_status) , consign_time = values(consign_time) , discount_fee = values(discount_fee) , divide_order_fee = values(divide_order_fee) , end_time = values(end_time) , invoice_no = values(invoice_no) , is_daixiao = values(is_daixiao) , is_oversold = values(is_oversold) , logistics_company = values(logistics_company) , num = values(num) , num_iid = values(num_iid) , order_from = values(order_from) , outer_iid = values(outer_iid) , payment = values(payment) , pic_path = values(pic_path) , price = values(price) , seller_rate = values(seller_rate) , seller_type = values(seller_type) , shipping_type = values(shipping_type) , sku_id = values(sku_id) , sku_properties_name = values(sku_properties_name) , snapshot_url = values(snapshot_url) , store_code = values(store_code) , title = values(title) , total_fee = values(total_fee) , item_meal_name = values(item_meal_name) , seller_nick = values(seller_nick) , buyer_nick = values(buyer_nick) , snapshot = values(snapshot) , timeout_action_time = values(timeout_action_time) , sub_order_tax_fee = values(sub_order_tax_fee) , sub_order_tax_rate = values(sub_order_tax_rate) , estimate_con_time = values(estimate_con_time) , o2o_guide_id = values(o2o_guide_id) , o2o_guide_name = values(o2o_guide_name) , o2o_shop_id = values(o2o_shop_id) , o2o_shop_name = values(o2o_shop_name) , biz_code = values(biz_code) , cloud_store = values(cloud_store) , hj_settle_no_commission = values(hj_settle_no_commission) , order_taking = values(order_taking) , cloud_store_token = values(cloud_store_token) , cloud_store_bind_pos = values(cloud_store_bind_pos) , os_activity_id = values(os_activity_id) , os_fg_item_id = values(os_fg_item_id) , os_gift_count = values(os_gift_count) , os_sort_num = values(os_sort_num) , item_oid = values(item_oid) , type = values(type) , iid = values(iid) , service_id = values(service_id) , item_meal_id = values(item_meal_id) , outer_sku_id = values(outer_sku_id) , service_detail_url = values(service_detail_url) , modified = values(modified) , refund_id = values(refund_id) , is_service_order = values(is_service_order) , order_attr = values(order_attr) , bind_oid = values(bind_oid) , part_mjz_discount = values(part_mjz_discount) , ticket_outer_id = values(ticket_outer_id) , ticket_expdate_key = values(ticket_expdate_key) , is_www = values(is_www) , tmser_spu_code = values(tmser_spu_code) , bind_oids = values(bind_oids) , zhengji_status = values(zhengji_status) , md_qualification = values(md_qualification) , md_fee = values(md_fee) , customization = values(customization) , inv_type = values(inv_type) , xxx = values(xxx) , is_sh_ship = values(is_sh_ship) , shipper = values(shipper) , f_type = values(f_type) , f_status = values(f_status) , f_term = values(f_term) , o2o_et_order_id = values(o2o_et_order_id) , combo_id = values(combo_id) , assembly_rela = values(assembly_rela) , assembly_price = values(assembly_price) , assembly_item = values(assembly_item) , sub_order_tax_promotion_fee = values(sub_order_tax_promotion_fee) , cl_down_payment = values(cl_down_payment) , cl_down_payment_ratio = values(cl_down_payment_ratio) , cl_month_payment = values(cl_month_payment) , cl_tail_payment = values(cl_tail_payment) , cl_installment_num = values(cl_installment_num) , cal_penalty = values(cal_penalty) , cl_service_fee = values(cl_service_fee) , cl_car_taker = values(cl_car_taker) , cl_car_taker_phone = values(cl_car_taker_phone) , cl_car_taker_i_d_num = values(cl_car_taker_i_d_num) , cl_car_taker_id_num = values(cl_car_taker_id_num) , down_payment = values(down_payment) , down_payment_ratio = values(down_payment_ratio) , month_payment = values(month_payment) , tail_payment = values(tail_payment) , installment_num = values(installment_num) , penalty = values(penalty) , service_fee = values(service_fee) , car_taker = values(car_taker) , car_taker_phone = values(car_taker_phone) , car_taker_id_num = values(car_taker_id_num) , car_store_code = values(car_store_code) , car_store_name = values(car_store_name) , out_unique_id = values(out_unique_id) , ws_bank_apply_no = values(ws_bank_apply_no) , car_taker_id = values(car_taker_id) , oid_str = values(oid_str) , fqg_num = values(fqg_num) , is_fqg_s_fee = values(is_fqg_s_fee) , tax_free = values(tax_free) , tax_coupon_discount = values(tax_coupon_discount) , recharge_fee = values(recharge_fee) , platform_subsidy_fee = values(platform_subsidy_fee) , nr_reduce_inv_fail = values(nr_reduce_inv_fail) , nr_outer_iid = values(nr_outer_iid) , bind_oids_all_status = values(bind_oids_all_status) , sort_info = values(sort_info) , retail_store_id = values(retail_store_id) , out_item_id = values(out_item_id) , rt_omni_outer_sc_id = values(rt_omni_outer_sc_id) , rt_omni_sc_id = values(rt_omni_sc_id) , modify_address = values(modify_address) , ti_modify_address_time = values(ti_modify_address_time) , credit_buy = values(credit_buy) , s_tariff_fee = values(s_tariff_fee) , timing_promise = values(timing_promise) , promise_service = values(promise_service) , es_date = values(es_date) , es_range = values(es_range) , os_date = values(os_date) , os_range = values(os_range) , cutoff_minutes = values(cutoff_minutes) , es_time = values(es_time) , delivery_time = values(delivery_time) , collect_time = values(collect_time) , dispatch_time = values(dispatch_time) , sign_time = values(sign_time) , promise_end_time = values(promise_end_time) , omni_jxs_outerid = values(omni_jxs_outerid) , propoint = values(propoint) , is_kaola = values(is_kaola) , brand_light_shop_source = values(brand_light_shop_source) , brand_light_shop_store_id = values(brand_light_shop_store_id) , special_refund_type = values(special_refund_type) , extend_info = values(extend_info) , is_devalue_fee = values(is_devalue_fee) , service_order_type = values(service_order_type) , service_outer_id = values(service_outer_id) , expand_card_expand_price_used_suborder = values(expand_card_expand_price_used_suborder) , expand_card_basic_price_used_suborder = values(expand_card_basic_price_used_suborder) , create_time = values(create_time) , update_time = values(update_time) , ext1 = values(ext1) , ext2 = values(ext2) , ext3 = values(ext3) , ext4 = values(ext4) , ext5 = values(ext5) 
+    </insert>
+    
+    <!--通过ID修改数据-->
+    <update id="updateById">
+        UPDATE dst_111yao_doms.d_pl_tm_order_orders_d
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="tid != null">
+                tid = #{tid},
+            </if>
+            <if test="olshopid != null and olshopid != ''">
+                olshopid = #{olshopid},
+            </if>
+            <if test="oid != null and oid != ''">
+                oid = #{oid},
+            </if>
+            <if test="adjustFee != null and adjustFee != ''">
+                adjust_fee = #{adjustFee},
+            </if>
+            <if test="buyerRate != null and buyerRate != ''">
+                buyer_rate = #{buyerRate},
+            </if>
+            <if test="cid != null">
+                cid = #{cid},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+            <if test="refundStatus != null and refundStatus != ''">
+                refund_status = #{refundStatus},
+            </if>
+            <if test="consignTime != null and consignTime != ''">
+                consign_time = #{consignTime},
+            </if>
+            <if test="discountFee != null and discountFee != ''">
+                discount_fee = #{discountFee},
+            </if>
+            <if test="divideOrderFee != null and divideOrderFee != ''">
+                divide_order_fee = #{divideOrderFee},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="invoiceNo != null and invoiceNo != ''">
+                invoice_no = #{invoiceNo},
+            </if>
+            <if test="isDaixiao != null and isDaixiao != ''">
+                is_daixiao = #{isDaixiao},
+            </if>
+            <if test="isOversold != null and isOversold != ''">
+                is_oversold = #{isOversold},
+            </if>
+            <if test="logisticsCompany != null and logisticsCompany != ''">
+                logistics_company = #{logisticsCompany},
+            </if>
+            <if test="num != null">
+                num = #{num},
+            </if>
+            <if test="numIid != null">
+                num_iid = #{numIid},
+            </if>
+            <if test="orderFrom != null and orderFrom != ''">
+                order_from = #{orderFrom},
+            </if>
+            <if test="outerIid != null and outerIid != ''">
+                outer_iid = #{outerIid},
+            </if>
+            <if test="payment != null and payment != ''">
+                payment = #{payment},
+            </if>
+            <if test="picPath != null and picPath != ''">
+                pic_path = #{picPath},
+            </if>
+            <if test="price != null and price != ''">
+                price = #{price},
+            </if>
+            <if test="sellerRate != null and sellerRate != ''">
+                seller_rate = #{sellerRate},
+            </if>
+            <if test="sellerType != null and sellerType != ''">
+                seller_type = #{sellerType},
+            </if>
+            <if test="shippingType != null and shippingType != ''">
+                shipping_type = #{shippingType},
+            </if>
+            <if test="skuId != null and skuId != ''">
+                sku_id = #{skuId},
+            </if>
+            <if test="skuPropertiesName != null and skuPropertiesName != ''">
+                sku_properties_name = #{skuPropertiesName},
+            </if>
+            <if test="snapshotUrl != null and snapshotUrl != ''">
+                snapshot_url = #{snapshotUrl},
+            </if>
+            <if test="storeCode != null and storeCode != ''">
+                store_code = #{storeCode},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="totalFee != null and totalFee != ''">
+                total_fee = #{totalFee},
+            </if>
+            <if test="itemMealName != null and itemMealName != ''">
+                item_meal_name = #{itemMealName},
+            </if>
+            <if test="sellerNick != null and sellerNick != ''">
+                seller_nick = #{sellerNick},
+            </if>
+            <if test="buyerNick != null and buyerNick != ''">
+                buyer_nick = #{buyerNick},
+            </if>
+            <if test="snapshot != null and snapshot != ''">
+                snapshot = #{snapshot},
+            </if>
+            <if test="timeoutActionTime != null">
+                timeout_action_time = #{timeoutActionTime},
+            </if>
+            <if test="subOrderTaxFee != null and subOrderTaxFee != ''">
+                sub_order_tax_fee = #{subOrderTaxFee},
+            </if>
+            <if test="subOrderTaxRate != null and subOrderTaxRate != ''">
+                sub_order_tax_rate = #{subOrderTaxRate},
+            </if>
+            <if test="estimateConTime != null and estimateConTime != ''">
+                estimate_con_time = #{estimateConTime},
+            </if>
+            <if test="o2oGuideId != null and o2oGuideId != ''">
+                o2o_guide_id = #{o2oGuideId},
+            </if>
+            <if test="o2oGuideName != null and o2oGuideName != ''">
+                o2o_guide_name = #{o2oGuideName},
+            </if>
+            <if test="o2oShopId != null and o2oShopId != ''">
+                o2o_shop_id = #{o2oShopId},
+            </if>
+            <if test="o2oShopName != null and o2oShopName != ''">
+                o2o_shop_name = #{o2oShopName},
+            </if>
+            <if test="bizCode != null and bizCode != ''">
+                biz_code = #{bizCode},
+            </if>
+            <if test="cloudStore != null and cloudStore != ''">
+                cloud_store = #{cloudStore},
+            </if>
+            <if test="hjSettleNoCommission != null and hjSettleNoCommission != ''">
+                hj_settle_no_commission = #{hjSettleNoCommission},
+            </if>
+            <if test="orderTaking != null and orderTaking != ''">
+                order_taking = #{orderTaking},
+            </if>
+            <if test="cloudStoreToken != null and cloudStoreToken != ''">
+                cloud_store_token = #{cloudStoreToken},
+            </if>
+            <if test="cloudStoreBindPos != null and cloudStoreBindPos != ''">
+                cloud_store_bind_pos = #{cloudStoreBindPos},
+            </if>
+            <if test="osActivityId != null and osActivityId != ''">
+                os_activity_id = #{osActivityId},
+            </if>
+            <if test="osFgItemId != null and osFgItemId != ''">
+                os_fg_item_id = #{osFgItemId},
+            </if>
+            <if test="osGiftCount != null and osGiftCount != ''">
+                os_gift_count = #{osGiftCount},
+            </if>
+            <if test="osSortNum != null and osSortNum != ''">
+                os_sort_num = #{osSortNum},
+            </if>
+            <if test="itemOid != null">
+                item_oid = #{itemOid},
+            </if>
+            <if test="type != null and type != ''">
+                type = #{type},
+            </if>
+            <if test="iid != null and iid != ''">
+                iid = #{iid},
+            </if>
+            <if test="serviceId != null">
+                service_id = #{serviceId},
+            </if>
+            <if test="itemMealId != null">
+                item_meal_id = #{itemMealId},
+            </if>
+            <if test="outerSkuId != null and outerSkuId != ''">
+                outer_sku_id = #{outerSkuId},
+            </if>
+            <if test="serviceDetailUrl != null and serviceDetailUrl != ''">
+                service_detail_url = #{serviceDetailUrl},
+            </if>
+            <if test="modified != null">
+                modified = #{modified},
+            </if>
+            <if test="refundId != null and refundId != ''">
+                refund_id = #{refundId},
+            </if>
+            <if test="isServiceOrder != null and isServiceOrder != ''">
+                is_service_order = #{isServiceOrder},
+            </if>
+            <if test="orderAttr != null and orderAttr != ''">
+                order_attr = #{orderAttr},
+            </if>
+            <if test="bindOid != null">
+                bind_oid = #{bindOid},
+            </if>
+            <if test="partMjzDiscount != null and partMjzDiscount != ''">
+                part_mjz_discount = #{partMjzDiscount},
+            </if>
+            <if test="ticketOuterId != null and ticketOuterId != ''">
+                ticket_outer_id = #{ticketOuterId},
+            </if>
+            <if test="ticketExpdateKey != null and ticketExpdateKey != ''">
+                ticket_expdate_key = #{ticketExpdateKey},
+            </if>
+            <if test="isWww != null and isWww != ''">
+                is_www = #{isWww},
+            </if>
+            <if test="tmserSpuCode != null and tmserSpuCode != ''">
+                tmser_spu_code = #{tmserSpuCode},
+            </if>
+            <if test="bindOids != null and bindOids != ''">
+                bind_oids = #{bindOids},
+            </if>
+            <if test="zhengjiStatus != null and zhengjiStatus != ''">
+                zhengji_status = #{zhengjiStatus},
+            </if>
+            <if test="mdQualification != null and mdQualification != ''">
+                md_qualification = #{mdQualification},
+            </if>
+            <if test="mdFee != null and mdFee != ''">
+                md_fee = #{mdFee},
+            </if>
+            <if test="customization != null and customization != ''">
+                customization = #{customization},
+            </if>
+            <if test="invType != null and invType != ''">
+                inv_type = #{invType},
+            </if>
+            <if test="xxx != null and xxx != ''">
+                xxx = #{xxx},
+            </if>
+            <if test="isShShip != null and isShShip != ''">
+                is_sh_ship = #{isShShip},
+            </if>
+            <if test="shipper != null and shipper != ''">
+                shipper = #{shipper},
+            </if>
+            <if test="fType != null and fType != ''">
+                f_type = #{fType},
+            </if>
+            <if test="fStatus != null and fStatus != ''">
+                f_status = #{fStatus},
+            </if>
+            <if test="fTerm != null and fTerm != ''">
+                f_term = #{fTerm},
+            </if>
+            <if test="o2oEtOrderId != null and o2oEtOrderId != ''">
+                o2o_et_order_id = #{o2oEtOrderId},
+            </if>
+            <if test="comboId != null and comboId != ''">
+                combo_id = #{comboId},
+            </if>
+            <if test="assemblyRela != null and assemblyRela != ''">
+                assembly_rela = #{assemblyRela},
+            </if>
+            <if test="assemblyPrice != null and assemblyPrice != ''">
+                assembly_price = #{assemblyPrice},
+            </if>
+            <if test="assemblyItem != null and assemblyItem != ''">
+                assembly_item = #{assemblyItem},
+            </if>
+            <if test="subOrderTaxPromotionFee != null and subOrderTaxPromotionFee != ''">
+                sub_order_tax_promotion_fee = #{subOrderTaxPromotionFee},
+            </if>
+            <if test="clDownPayment != null and clDownPayment != ''">
+                cl_down_payment = #{clDownPayment},
+            </if>
+            <if test="clDownPaymentRatio != null and clDownPaymentRatio != ''">
+                cl_down_payment_ratio = #{clDownPaymentRatio},
+            </if>
+            <if test="clMonthPayment != null and clMonthPayment != ''">
+                cl_month_payment = #{clMonthPayment},
+            </if>
+            <if test="clTailPayment != null and clTailPayment != ''">
+                cl_tail_payment = #{clTailPayment},
+            </if>
+            <if test="clInstallmentNum != null and clInstallmentNum != ''">
+                cl_installment_num = #{clInstallmentNum},
+            </if>
+            <if test="calPenalty != null and calPenalty != ''">
+                cal_penalty = #{calPenalty},
+            </if>
+            <if test="clServiceFee != null and clServiceFee != ''">
+                cl_service_fee = #{clServiceFee},
+            </if>
+            <if test="clCarTaker != null and clCarTaker != ''">
+                cl_car_taker = #{clCarTaker},
+            </if>
+            <if test="clCarTakerPhone != null and clCarTakerPhone != ''">
+                cl_car_taker_phone = #{clCarTakerPhone},
+            </if>
+            <if test="clCarTakerIDNum != null and clCarTakerIDNum != ''">
+                cl_car_taker_i_d_num = #{clCarTakerIDNum},
+            </if>
+            <if test="clCarTakerIdNum != null and clCarTakerIdNum != ''">
+                cl_car_taker_id_num = #{clCarTakerIdNum},
+            </if>
+            <if test="downPayment != null and downPayment != ''">
+                down_payment = #{downPayment},
+            </if>
+            <if test="downPaymentRatio != null and downPaymentRatio != ''">
+                down_payment_ratio = #{downPaymentRatio},
+            </if>
+            <if test="monthPayment != null and monthPayment != ''">
+                month_payment = #{monthPayment},
+            </if>
+            <if test="tailPayment != null and tailPayment != ''">
+                tail_payment = #{tailPayment},
+            </if>
+            <if test="installmentNum != null and installmentNum != ''">
+                installment_num = #{installmentNum},
+            </if>
+            <if test="penalty != null and penalty != ''">
+                penalty = #{penalty},
+            </if>
+            <if test="serviceFee != null and serviceFee != ''">
+                service_fee = #{serviceFee},
+            </if>
+            <if test="carTaker != null and carTaker != ''">
+                car_taker = #{carTaker},
+            </if>
+            <if test="carTakerPhone != null and carTakerPhone != ''">
+                car_taker_phone = #{carTakerPhone},
+            </if>
+            <if test="carTakerIdNum != null and carTakerIdNum != ''">
+                car_taker_id_num = #{carTakerIdNum},
+            </if>
+            <if test="carStoreCode != null and carStoreCode != ''">
+                car_store_code = #{carStoreCode},
+            </if>
+            <if test="carStoreName != null and carStoreName != ''">
+                car_store_name = #{carStoreName},
+            </if>
+            <if test="outUniqueId != null and outUniqueId != ''">
+                out_unique_id = #{outUniqueId},
+            </if>
+            <if test="wsBankApplyNo != null and wsBankApplyNo != ''">
+                ws_bank_apply_no = #{wsBankApplyNo},
+            </if>
+            <if test="carTakerId != null and carTakerId != ''">
+                car_taker_id = #{carTakerId},
+            </if>
+            <if test="oidStr != null and oidStr != ''">
+                oid_str = #{oidStr},
+            </if>
+            <if test="fqgNum != null">
+                fqg_num = #{fqgNum},
+            </if>
+            <if test="isFqgSFee != null and isFqgSFee != ''">
+                is_fqg_s_fee = #{isFqgSFee},
+            </if>
+            <if test="taxFree != null and taxFree != ''">
+                tax_free = #{taxFree},
+            </if>
+            <if test="taxCouponDiscount != null and taxCouponDiscount != ''">
+                tax_coupon_discount = #{taxCouponDiscount},
+            </if>
+            <if test="rechargeFee != null and rechargeFee != ''">
+                recharge_fee = #{rechargeFee},
+            </if>
+            <if test="platformSubsidyFee != null and platformSubsidyFee != ''">
+                platform_subsidy_fee = #{platformSubsidyFee},
+            </if>
+            <if test="nrReduceInvFail != null and nrReduceInvFail != ''">
+                nr_reduce_inv_fail = #{nrReduceInvFail},
+            </if>
+            <if test="nrOuterIid != null and nrOuterIid != ''">
+                nr_outer_iid = #{nrOuterIid},
+            </if>
+            <if test="bindOidsAllStatus != null and bindOidsAllStatus != ''">
+                bind_oids_all_status = #{bindOidsAllStatus},
+            </if>
+            <if test="sortInfo != null and sortInfo != ''">
+                sort_info = #{sortInfo},
+            </if>
+            <if test="retailStoreId != null and retailStoreId != ''">
+                retail_store_id = #{retailStoreId},
+            </if>
+            <if test="outItemId != null and outItemId != ''">
+                out_item_id = #{outItemId},
+            </if>
+            <if test="rtOmniOuterScId != null and rtOmniOuterScId != ''">
+                rt_omni_outer_sc_id = #{rtOmniOuterScId},
+            </if>
+            <if test="rtOmniScId != null and rtOmniScId != ''">
+                rt_omni_sc_id = #{rtOmniScId},
+            </if>
+            <if test="modifyAddress != null and modifyAddress != ''">
+                modify_address = #{modifyAddress},
+            </if>
+            <if test="tiModifyAddressTime != null and tiModifyAddressTime != ''">
+                ti_modify_address_time = #{tiModifyAddressTime},
+            </if>
+            <if test="creditBuy != null and creditBuy != ''">
+                credit_buy = #{creditBuy},
+            </if>
+            <if test="sTariffFee != null and sTariffFee != ''">
+                s_tariff_fee = #{sTariffFee},
+            </if>
+            <if test="timingPromise != null and timingPromise != ''">
+                timing_promise = #{timingPromise},
+            </if>
+            <if test="promiseService != null and promiseService != ''">
+                promise_service = #{promiseService},
+            </if>
+            <if test="esDate != null and esDate != ''">
+                es_date = #{esDate},
+            </if>
+            <if test="esRange != null and esRange != ''">
+                es_range = #{esRange},
+            </if>
+            <if test="osDate != null and osDate != ''">
+                os_date = #{osDate},
+            </if>
+            <if test="osRange != null and osRange != ''">
+                os_range = #{osRange},
+            </if>
+            <if test="cutoffMinutes != null and cutoffMinutes != ''">
+                cutoff_minutes = #{cutoffMinutes},
+            </if>
+            <if test="esTime != null and esTime != ''">
+                es_time = #{esTime},
+            </if>
+            <if test="deliveryTime != null and deliveryTime != ''">
+                delivery_time = #{deliveryTime},
+            </if>
+            <if test="collectTime != null and collectTime != ''">
+                collect_time = #{collectTime},
+            </if>
+            <if test="dispatchTime != null and dispatchTime != ''">
+                dispatch_time = #{dispatchTime},
+            </if>
+            <if test="signTime != null and signTime != ''">
+                sign_time = #{signTime},
+            </if>
+            <if test="promiseEndTime != null and promiseEndTime != ''">
+                promise_end_time = #{promiseEndTime},
+            </if>
+            <if test="omniJxsOuterid != null and omniJxsOuterid != ''">
+                omni_jxs_outerid = #{omniJxsOuterid},
+            </if>
+            <if test="propoint != null and propoint != ''">
+                propoint = #{propoint},
+            </if>
+            <if test="isKaola != null and isKaola != ''">
+                is_kaola = #{isKaola},
+            </if>
+            <if test="brandLightShopSource != null and brandLightShopSource != ''">
+                brand_light_shop_source = #{brandLightShopSource},
+            </if>
+            <if test="brandLightShopStoreId != null and brandLightShopStoreId != ''">
+                brand_light_shop_store_id = #{brandLightShopStoreId},
+            </if>
+            <if test="specialRefundType != null and specialRefundType != ''">
+                special_refund_type = #{specialRefundType},
+            </if>
+            <if test="extendInfo != null and extendInfo != ''">
+                extend_info = #{extendInfo},
+            </if>
+            <if test="isDevalueFee != null and isDevalueFee != ''">
+                is_devalue_fee = #{isDevalueFee},
+            </if>
+            <if test="serviceOrderType != null and serviceOrderType != ''">
+                service_order_type = #{serviceOrderType},
+            </if>
+            <if test="serviceOuterId != null and serviceOuterId != ''">
+                service_outer_id = #{serviceOuterId},
+            </if>
+            <if test="expandCardExpandPriceUsedSuborder != null and expandCardExpandPriceUsedSuborder != ''">
+                expand_card_expand_price_used_suborder = #{expandCardExpandPriceUsedSuborder},
+            </if>
+            <if test="expandCardBasicPriceUsedSuborder != null and expandCardBasicPriceUsedSuborder != ''">
+                expand_card_basic_price_used_suborder = #{expandCardBasicPriceUsedSuborder},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                ext4 = #{ext4},
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                ext5 = #{ext5},
+            </if>
+        </set>
+         WHERE id = #{id}
+    </update>
+    
+    <!--通过主键修改数据-->
+    <update id="updateByPk">
+        UPDATE dst_111yao_doms.d_pl_tm_order_orders_d
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="olshopid != null and olshopid != ''">
+                olshopid = #{olshopid},
+            </if>
+            <if test="adjustFee != null and adjustFee != ''">
+                adjust_fee = #{adjustFee},
+            </if>
+            <if test="buyerRate != null and buyerRate != ''">
+                buyer_rate = #{buyerRate},
+            </if>
+            <if test="cid != null">
+                cid = #{cid},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+            <if test="refundStatus != null and refundStatus != ''">
+                refund_status = #{refundStatus},
+            </if>
+            <if test="consignTime != null and consignTime != ''">
+                consign_time = #{consignTime},
+            </if>
+            <if test="discountFee != null and discountFee != ''">
+                discount_fee = #{discountFee},
+            </if>
+            <if test="divideOrderFee != null and divideOrderFee != ''">
+                divide_order_fee = #{divideOrderFee},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="invoiceNo != null and invoiceNo != ''">
+                invoice_no = #{invoiceNo},
+            </if>
+            <if test="isDaixiao != null and isDaixiao != ''">
+                is_daixiao = #{isDaixiao},
+            </if>
+            <if test="isOversold != null and isOversold != ''">
+                is_oversold = #{isOversold},
+            </if>
+            <if test="logisticsCompany != null and logisticsCompany != ''">
+                logistics_company = #{logisticsCompany},
+            </if>
+            <if test="num != null">
+                num = #{num},
+            </if>
+            <if test="numIid != null">
+                num_iid = #{numIid},
+            </if>
+            <if test="orderFrom != null and orderFrom != ''">
+                order_from = #{orderFrom},
+            </if>
+            <if test="outerIid != null and outerIid != ''">
+                outer_iid = #{outerIid},
+            </if>
+            <if test="payment != null and payment != ''">
+                payment = #{payment},
+            </if>
+            <if test="picPath != null and picPath != ''">
+                pic_path = #{picPath},
+            </if>
+            <if test="price != null and price != ''">
+                price = #{price},
+            </if>
+            <if test="sellerRate != null and sellerRate != ''">
+                seller_rate = #{sellerRate},
+            </if>
+            <if test="sellerType != null and sellerType != ''">
+                seller_type = #{sellerType},
+            </if>
+            <if test="shippingType != null and shippingType != ''">
+                shipping_type = #{shippingType},
+            </if>
+            <if test="skuId != null and skuId != ''">
+                sku_id = #{skuId},
+            </if>
+            <if test="skuPropertiesName != null and skuPropertiesName != ''">
+                sku_properties_name = #{skuPropertiesName},
+            </if>
+            <if test="snapshotUrl != null and snapshotUrl != ''">
+                snapshot_url = #{snapshotUrl},
+            </if>
+            <if test="storeCode != null and storeCode != ''">
+                store_code = #{storeCode},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="totalFee != null and totalFee != ''">
+                total_fee = #{totalFee},
+            </if>
+            <if test="itemMealName != null and itemMealName != ''">
+                item_meal_name = #{itemMealName},
+            </if>
+            <if test="sellerNick != null and sellerNick != ''">
+                seller_nick = #{sellerNick},
+            </if>
+            <if test="buyerNick != null and buyerNick != ''">
+                buyer_nick = #{buyerNick},
+            </if>
+            <if test="snapshot != null and snapshot != ''">
+                snapshot = #{snapshot},
+            </if>
+            <if test="timeoutActionTime != null">
+                timeout_action_time = #{timeoutActionTime},
+            </if>
+            <if test="subOrderTaxFee != null and subOrderTaxFee != ''">
+                sub_order_tax_fee = #{subOrderTaxFee},
+            </if>
+            <if test="subOrderTaxRate != null and subOrderTaxRate != ''">
+                sub_order_tax_rate = #{subOrderTaxRate},
+            </if>
+            <if test="estimateConTime != null and estimateConTime != ''">
+                estimate_con_time = #{estimateConTime},
+            </if>
+            <if test="o2oGuideId != null and o2oGuideId != ''">
+                o2o_guide_id = #{o2oGuideId},
+            </if>
+            <if test="o2oGuideName != null and o2oGuideName != ''">
+                o2o_guide_name = #{o2oGuideName},
+            </if>
+            <if test="o2oShopId != null and o2oShopId != ''">
+                o2o_shop_id = #{o2oShopId},
+            </if>
+            <if test="o2oShopName != null and o2oShopName != ''">
+                o2o_shop_name = #{o2oShopName},
+            </if>
+            <if test="bizCode != null and bizCode != ''">
+                biz_code = #{bizCode},
+            </if>
+            <if test="cloudStore != null and cloudStore != ''">
+                cloud_store = #{cloudStore},
+            </if>
+            <if test="hjSettleNoCommission != null and hjSettleNoCommission != ''">
+                hj_settle_no_commission = #{hjSettleNoCommission},
+            </if>
+            <if test="orderTaking != null and orderTaking != ''">
+                order_taking = #{orderTaking},
+            </if>
+            <if test="cloudStoreToken != null and cloudStoreToken != ''">
+                cloud_store_token = #{cloudStoreToken},
+            </if>
+            <if test="cloudStoreBindPos != null and cloudStoreBindPos != ''">
+                cloud_store_bind_pos = #{cloudStoreBindPos},
+            </if>
+            <if test="osActivityId != null and osActivityId != ''">
+                os_activity_id = #{osActivityId},
+            </if>
+            <if test="osFgItemId != null and osFgItemId != ''">
+                os_fg_item_id = #{osFgItemId},
+            </if>
+            <if test="osGiftCount != null and osGiftCount != ''">
+                os_gift_count = #{osGiftCount},
+            </if>
+            <if test="osSortNum != null and osSortNum != ''">
+                os_sort_num = #{osSortNum},
+            </if>
+            <if test="itemOid != null">
+                item_oid = #{itemOid},
+            </if>
+            <if test="type != null and type != ''">
+                type = #{type},
+            </if>
+            <if test="iid != null and iid != ''">
+                iid = #{iid},
+            </if>
+            <if test="serviceId != null">
+                service_id = #{serviceId},
+            </if>
+            <if test="itemMealId != null">
+                item_meal_id = #{itemMealId},
+            </if>
+            <if test="outerSkuId != null and outerSkuId != ''">
+                outer_sku_id = #{outerSkuId},
+            </if>
+            <if test="serviceDetailUrl != null and serviceDetailUrl != ''">
+                service_detail_url = #{serviceDetailUrl},
+            </if>
+            <if test="modified != null">
+                modified = #{modified},
+            </if>
+            <if test="refundId != null and refundId != ''">
+                refund_id = #{refundId},
+            </if>
+            <if test="isServiceOrder != null and isServiceOrder != ''">
+                is_service_order = #{isServiceOrder},
+            </if>
+            <if test="orderAttr != null and orderAttr != ''">
+                order_attr = #{orderAttr},
+            </if>
+            <if test="bindOid != null">
+                bind_oid = #{bindOid},
+            </if>
+            <if test="partMjzDiscount != null and partMjzDiscount != ''">
+                part_mjz_discount = #{partMjzDiscount},
+            </if>
+            <if test="ticketOuterId != null and ticketOuterId != ''">
+                ticket_outer_id = #{ticketOuterId},
+            </if>
+            <if test="ticketExpdateKey != null and ticketExpdateKey != ''">
+                ticket_expdate_key = #{ticketExpdateKey},
+            </if>
+            <if test="isWww != null and isWww != ''">
+                is_www = #{isWww},
+            </if>
+            <if test="tmserSpuCode != null and tmserSpuCode != ''">
+                tmser_spu_code = #{tmserSpuCode},
+            </if>
+            <if test="bindOids != null and bindOids != ''">
+                bind_oids = #{bindOids},
+            </if>
+            <if test="zhengjiStatus != null and zhengjiStatus != ''">
+                zhengji_status = #{zhengjiStatus},
+            </if>
+            <if test="mdQualification != null and mdQualification != ''">
+                md_qualification = #{mdQualification},
+            </if>
+            <if test="mdFee != null and mdFee != ''">
+                md_fee = #{mdFee},
+            </if>
+            <if test="customization != null and customization != ''">
+                customization = #{customization},
+            </if>
+            <if test="invType != null and invType != ''">
+                inv_type = #{invType},
+            </if>
+            <if test="xxx != null and xxx != ''">
+                xxx = #{xxx},
+            </if>
+            <if test="isShShip != null and isShShip != ''">
+                is_sh_ship = #{isShShip},
+            </if>
+            <if test="shipper != null and shipper != ''">
+                shipper = #{shipper},
+            </if>
+            <if test="fType != null and fType != ''">
+                f_type = #{fType},
+            </if>
+            <if test="fStatus != null and fStatus != ''">
+                f_status = #{fStatus},
+            </if>
+            <if test="fTerm != null and fTerm != ''">
+                f_term = #{fTerm},
+            </if>
+            <if test="o2oEtOrderId != null and o2oEtOrderId != ''">
+                o2o_et_order_id = #{o2oEtOrderId},
+            </if>
+            <if test="comboId != null and comboId != ''">
+                combo_id = #{comboId},
+            </if>
+            <if test="assemblyRela != null and assemblyRela != ''">
+                assembly_rela = #{assemblyRela},
+            </if>
+            <if test="assemblyPrice != null and assemblyPrice != ''">
+                assembly_price = #{assemblyPrice},
+            </if>
+            <if test="assemblyItem != null and assemblyItem != ''">
+                assembly_item = #{assemblyItem},
+            </if>
+            <if test="subOrderTaxPromotionFee != null and subOrderTaxPromotionFee != ''">
+                sub_order_tax_promotion_fee = #{subOrderTaxPromotionFee},
+            </if>
+            <if test="clDownPayment != null and clDownPayment != ''">
+                cl_down_payment = #{clDownPayment},
+            </if>
+            <if test="clDownPaymentRatio != null and clDownPaymentRatio != ''">
+                cl_down_payment_ratio = #{clDownPaymentRatio},
+            </if>
+            <if test="clMonthPayment != null and clMonthPayment != ''">
+                cl_month_payment = #{clMonthPayment},
+            </if>
+            <if test="clTailPayment != null and clTailPayment != ''">
+                cl_tail_payment = #{clTailPayment},
+            </if>
+            <if test="clInstallmentNum != null and clInstallmentNum != ''">
+                cl_installment_num = #{clInstallmentNum},
+            </if>
+            <if test="calPenalty != null and calPenalty != ''">
+                cal_penalty = #{calPenalty},
+            </if>
+            <if test="clServiceFee != null and clServiceFee != ''">
+                cl_service_fee = #{clServiceFee},
+            </if>
+            <if test="clCarTaker != null and clCarTaker != ''">
+                cl_car_taker = #{clCarTaker},
+            </if>
+            <if test="clCarTakerPhone != null and clCarTakerPhone != ''">
+                cl_car_taker_phone = #{clCarTakerPhone},
+            </if>
+            <if test="clCarTakerIDNum != null and clCarTakerIDNum != ''">
+                cl_car_taker_i_d_num = #{clCarTakerIDNum},
+            </if>
+            <if test="clCarTakerIdNum != null and clCarTakerIdNum != ''">
+                cl_car_taker_id_num = #{clCarTakerIdNum},
+            </if>
+            <if test="downPayment != null and downPayment != ''">
+                down_payment = #{downPayment},
+            </if>
+            <if test="downPaymentRatio != null and downPaymentRatio != ''">
+                down_payment_ratio = #{downPaymentRatio},
+            </if>
+            <if test="monthPayment != null and monthPayment != ''">
+                month_payment = #{monthPayment},
+            </if>
+            <if test="tailPayment != null and tailPayment != ''">
+                tail_payment = #{tailPayment},
+            </if>
+            <if test="installmentNum != null and installmentNum != ''">
+                installment_num = #{installmentNum},
+            </if>
+            <if test="penalty != null and penalty != ''">
+                penalty = #{penalty},
+            </if>
+            <if test="serviceFee != null and serviceFee != ''">
+                service_fee = #{serviceFee},
+            </if>
+            <if test="carTaker != null and carTaker != ''">
+                car_taker = #{carTaker},
+            </if>
+            <if test="carTakerPhone != null and carTakerPhone != ''">
+                car_taker_phone = #{carTakerPhone},
+            </if>
+            <if test="carTakerIdNum != null and carTakerIdNum != ''">
+                car_taker_id_num = #{carTakerIdNum},
+            </if>
+            <if test="carStoreCode != null and carStoreCode != ''">
+                car_store_code = #{carStoreCode},
+            </if>
+            <if test="carStoreName != null and carStoreName != ''">
+                car_store_name = #{carStoreName},
+            </if>
+            <if test="outUniqueId != null and outUniqueId != ''">
+                out_unique_id = #{outUniqueId},
+            </if>
+            <if test="wsBankApplyNo != null and wsBankApplyNo != ''">
+                ws_bank_apply_no = #{wsBankApplyNo},
+            </if>
+            <if test="carTakerId != null and carTakerId != ''">
+                car_taker_id = #{carTakerId},
+            </if>
+            <if test="oidStr != null and oidStr != ''">
+                oid_str = #{oidStr},
+            </if>
+            <if test="fqgNum != null">
+                fqg_num = #{fqgNum},
+            </if>
+            <if test="isFqgSFee != null and isFqgSFee != ''">
+                is_fqg_s_fee = #{isFqgSFee},
+            </if>
+            <if test="taxFree != null and taxFree != ''">
+                tax_free = #{taxFree},
+            </if>
+            <if test="taxCouponDiscount != null and taxCouponDiscount != ''">
+                tax_coupon_discount = #{taxCouponDiscount},
+            </if>
+            <if test="rechargeFee != null and rechargeFee != ''">
+                recharge_fee = #{rechargeFee},
+            </if>
+            <if test="platformSubsidyFee != null and platformSubsidyFee != ''">
+                platform_subsidy_fee = #{platformSubsidyFee},
+            </if>
+            <if test="nrReduceInvFail != null and nrReduceInvFail != ''">
+                nr_reduce_inv_fail = #{nrReduceInvFail},
+            </if>
+            <if test="nrOuterIid != null and nrOuterIid != ''">
+                nr_outer_iid = #{nrOuterIid},
+            </if>
+            <if test="bindOidsAllStatus != null and bindOidsAllStatus != ''">
+                bind_oids_all_status = #{bindOidsAllStatus},
+            </if>
+            <if test="sortInfo != null and sortInfo != ''">
+                sort_info = #{sortInfo},
+            </if>
+            <if test="retailStoreId != null and retailStoreId != ''">
+                retail_store_id = #{retailStoreId},
+            </if>
+            <if test="outItemId != null and outItemId != ''">
+                out_item_id = #{outItemId},
+            </if>
+            <if test="rtOmniOuterScId != null and rtOmniOuterScId != ''">
+                rt_omni_outer_sc_id = #{rtOmniOuterScId},
+            </if>
+            <if test="rtOmniScId != null and rtOmniScId != ''">
+                rt_omni_sc_id = #{rtOmniScId},
+            </if>
+            <if test="modifyAddress != null and modifyAddress != ''">
+                modify_address = #{modifyAddress},
+            </if>
+            <if test="tiModifyAddressTime != null and tiModifyAddressTime != ''">
+                ti_modify_address_time = #{tiModifyAddressTime},
+            </if>
+            <if test="creditBuy != null and creditBuy != ''">
+                credit_buy = #{creditBuy},
+            </if>
+            <if test="sTariffFee != null and sTariffFee != ''">
+                s_tariff_fee = #{sTariffFee},
+            </if>
+            <if test="timingPromise != null and timingPromise != ''">
+                timing_promise = #{timingPromise},
+            </if>
+            <if test="promiseService != null and promiseService != ''">
+                promise_service = #{promiseService},
+            </if>
+            <if test="esDate != null and esDate != ''">
+                es_date = #{esDate},
+            </if>
+            <if test="esRange != null and esRange != ''">
+                es_range = #{esRange},
+            </if>
+            <if test="osDate != null and osDate != ''">
+                os_date = #{osDate},
+            </if>
+            <if test="osRange != null and osRange != ''">
+                os_range = #{osRange},
+            </if>
+            <if test="cutoffMinutes != null and cutoffMinutes != ''">
+                cutoff_minutes = #{cutoffMinutes},
+            </if>
+            <if test="esTime != null and esTime != ''">
+                es_time = #{esTime},
+            </if>
+            <if test="deliveryTime != null and deliveryTime != ''">
+                delivery_time = #{deliveryTime},
+            </if>
+            <if test="collectTime != null and collectTime != ''">
+                collect_time = #{collectTime},
+            </if>
+            <if test="dispatchTime != null and dispatchTime != ''">
+                dispatch_time = #{dispatchTime},
+            </if>
+            <if test="signTime != null and signTime != ''">
+                sign_time = #{signTime},
+            </if>
+            <if test="promiseEndTime != null and promiseEndTime != ''">
+                promise_end_time = #{promiseEndTime},
+            </if>
+            <if test="omniJxsOuterid != null and omniJxsOuterid != ''">
+                omni_jxs_outerid = #{omniJxsOuterid},
+            </if>
+            <if test="propoint != null and propoint != ''">
+                propoint = #{propoint},
+            </if>
+            <if test="isKaola != null and isKaola != ''">
+                is_kaola = #{isKaola},
+            </if>
+            <if test="brandLightShopSource != null and brandLightShopSource != ''">
+                brand_light_shop_source = #{brandLightShopSource},
+            </if>
+            <if test="brandLightShopStoreId != null and brandLightShopStoreId != ''">
+                brand_light_shop_store_id = #{brandLightShopStoreId},
+            </if>
+            <if test="specialRefundType != null and specialRefundType != ''">
+                special_refund_type = #{specialRefundType},
+            </if>
+            <if test="extendInfo != null and extendInfo != ''">
+                extend_info = #{extendInfo},
+            </if>
+            <if test="isDevalueFee != null and isDevalueFee != ''">
+                is_devalue_fee = #{isDevalueFee},
+            </if>
+            <if test="serviceOrderType != null and serviceOrderType != ''">
+                service_order_type = #{serviceOrderType},
+            </if>
+            <if test="serviceOuterId != null and serviceOuterId != ''">
+                service_outer_id = #{serviceOuterId},
+            </if>
+            <if test="expandCardExpandPriceUsedSuborder != null and expandCardExpandPriceUsedSuborder != ''">
+                expand_card_expand_price_used_suborder = #{expandCardExpandPriceUsedSuborder},
+            </if>
+            <if test="expandCardBasicPriceUsedSuborder != null and expandCardBasicPriceUsedSuborder != ''">
+                expand_card_basic_price_used_suborder = #{expandCardBasicPriceUsedSuborder},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="ext1 != null and ext1 != ''">
+                ext1 = #{ext1},
+            </if>
+            <if test="ext2 != null and ext2 != ''">
+                ext2 = #{ext2},
+            </if>
+            <if test="ext3 != null and ext3 != ''">
+                ext3 = #{ext3},
+            </if>
+            <if test="ext4 != null and ext4 != ''">
+                ext4 = #{ext4},
+            </if>
+            <if test="ext5 != null and ext5 != ''">
+                ext5 = #{ext5},
+            </if>
+        </set>
+         WHERE     tid = #{tid}
+           AND     oid = #{oid}
+    </update>
+    
+    <!--通过ID删除-->
+    <delete id="deleteById">
+        DELETE FROM dst_111yao_doms.d_pl_tm_order_orders_d
+         WHERE id = #{id}
+    </delete>
+    
+    <!--通过主键删除-->
+    <delete id="deleteByPk">
+        DELETE FROM dst_111yao_doms.d_pl_tm_order_orders_d
+         WHERE     tid = #{tid}
+           AND     oid = #{oid}
+    </delete>
+    
+</mapper>

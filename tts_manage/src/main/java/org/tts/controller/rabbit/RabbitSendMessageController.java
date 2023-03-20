@@ -111,18 +111,18 @@ public class RabbitSendMessageController {
 
     @GetMapping("order/message")
     public void sendOrderMessage(){
-        for (int i = 1; i < 5; i++) {
-            if(i%2 == 0){
-                DPlTmOrderH dPlTmOrderH = DPlTmOrderH.builder().id(Integer.valueOf(i).longValue()).tid(1442715891217544389L).status("TRADE_FINISHED").olshopid("1").build();
-                CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
-                rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_EXCHANGE, RabbitMQConfig.NOMAL_ROUTE_KEY,dPlTmOrderH,correlationData);
-            }else{
-                DWareBase dWareBase = new DWareBase();
-                dWareBase.setId(Integer.valueOf(i).longValue());
-                CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
-                rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_EXCHANGE, RabbitMQConfig.NOMAL_ROUTE_KEY,dWareBase,correlationData);
-            }
-        }
+//        for (int i = 1; i < 5; i++) {
+//            if(i%2 == 0){
+//                DPlTmOrderH dPlTmOrderH = DPlTmOrderH.builder().id(Integer.valueOf(i).longValue()).tid(1442715891217544389L).status("TRADE_FINISHED").olshopid("1").build();
+//                CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
+//                rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_EXCHANGE, RabbitMQConfig.NOMAL_ROUTE_KEY,dPlTmOrderH,correlationData);
+//            }else{
+//                DWareBase dWareBase = new DWareBase();
+//                dWareBase.setId(Integer.valueOf(i).longValue());
+//                CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
+//                rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_EXCHANGE, RabbitMQConfig.NOMAL_ROUTE_KEY,dWareBase,correlationData);
+//            }
+//        }
     }
 
 

@@ -82,6 +82,12 @@
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
         <!--webSocket end-->
+        <!--elasticsearch start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <!--elasticsearch end -->
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
